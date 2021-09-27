@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <!-- <script src="../scripts/bootstrap.min.js"></script> -->
+    <title>Home Page || Admin Module</title>
+    
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+    <link
+        href="http://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css"
+        rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="../scripts/scripts.js" type="applicatoin/javascript"></script>
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+    <script
+        src="http://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js">
+    </script>
+</head>
+<body>
+    <div id="myModal" class="modal fade in" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="invoice">
+                    <h3 class="center">Tax-Invoice</h3>
+                    <div class="container">
+                        <div class="row " style="font-size:10px">
+                            <div class="col-md-9">
+                                <div class="bill-number">
+                                    Bill Number: <strong id="billNum">0</strong>
+                                </div>
+                                <div class="bill-date">
+                                    Bill Date: <span id="billDate">dd-mm-yyyy</span>
+                                </div>
+                                <div class="order-date">
+                                    Order Date: <span id="orderDate">dd-mm-yyyy</span>
+                                </div>
+                                <div class="gst-number">
+                                    GSTIN: 20AAHCB78300R2ZC
+                                    <span style="width:20px; display: inline-block"></span>PAN: <span
+                                        class="pan">AAHCB78300R</span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="logo-wraper">
+                                    <img src="images/logo_black.JPG" alt="images">
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12">
+                                <h5><strong>Registerd Office: </strong></h5>
+                                <address style="font-style:normal; margin-bottom:10px;">
+                                    <strong>BN & Rana Almirahs (P) Ltd.</strong><br />
+                                    Holding No. 675A, Ward No. 16<br /> Argaghat Road, Giridih<br />Jharkhand
+                                </address>
+                            </div>
+                            <div class="col-md-12">
+                                <h5><strong>Customer details</strong></h5>
+                                <div class="customer-detail" id="customerDetail">
+
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="product-details">
+                                    <table class="table table-striped table-xs">
+                                        <thead>
+                                            <tr>
+                                                <th>Product Name</th>
+                                                <th>Description</th>
+                                                <th>Qty</th>
+                                                <th>@ Gross Amount</th>
+                                                <th>Discount</th>
+                                                <th>Advance</th>
+                                                <th>Taxable Value</th>
+                                                <th>IGST</th>
+                                                <th>SGST</th>
+                                                <th>Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="prd">
+                                            <tr>
+                                                <td colspan="10">&nsbp;</td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody id="prd1">
+                                            <tr>
+                                                <td colspan="7"
+                                                    style="border-top:2px solid #333; border-bottom:2px solid #333;">
+                                                    Total
+                                                    Amount</td>
+                                                <td colspan="3"
+                                                    style="border-top:2px solid #333; border-bottom:2px solid #333;"
+                                                    id="ttlPrc">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="9">
+                                                    <div>Disclaimer</div>
+                                                    <p>The goods sold are intended for end user consumption and not for
+                                                        resale.</p>
+                                                </td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="10">
+                                                    <h5><strong>Authorize Signature:</strong></h5>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="saveInvoice()">Save</button>
+                <button class="btn btn-normal" onclick="print()">Print</button>
+                <button type="button" class="btn btn-default" id="js-click" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+
+    
+    <div class="jumbotron">
+        <div class="container">
+            <h2 class="text-center">Welcome to the BN & Rana Almirahs Pvt Ltd.</h2>
+        </div>
+    </div>
+
+       
+    <div class="container">
+        <div class="invoice-wrap">
+                <h3 class="text-center">Generate Invoice</h3>
+                <br/><br/>
+                <div class="row">
+                    <div class="col-md-12 col-xs-12 col-sm-12">
+                        <form class="billinfo">
+                            <div class="form-group col-md-12">
+                                <select class="form-control custom-select" id="usersListOptions" required>
+                                    <option value="-1" selected>Select Customer</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6 col-xs-12 col-sm-12">
+                                <div class='input-group date' id='datetimepicker1'>
+                                    <input type='text' class="form-control" placeholder="Select Order Date" id="ordDate" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6 col-xs-12 col-sm-12">
+                                <div class='input-group date' id='datetimepicker2'>
+                                    <input type='text' class="form-control" id="date" placeholder="Select Bill Date" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="form-group col-md-12">
+                                <select class="custom-select form-control" id="productItems">
+                                    <option value="-1" selected>Select Product</option>
+                                </select>
+                            </div>
+                            <div class="list-product col-md-12">
+                                <ol class="list" id="listItems">
+                                </ol>
+                            </div>
+                            <div class="form-group col-md-12 text-center">
+                                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Generate
+                                    Bill</button>
+                            </div>
+        
+        
+                        </form>
+                    </div>
+                </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="margin-top-40">
+        <div class="container">
+            <p class="text-center text-small">Copyright &copy; all content are reserved for BN & Rana Almirahs Pvt Ltd.
+            </p>
+        </div>
+    </div>
+
+
+
+    <script type="application/javascript">
+        var listallproduct = [],
+            selectedUser;
+
+        $(window).on('load', function () {
+
+            $('.js-click').trigger('click');
+
+            // var htmlData = undefined;
+            $('.overlay').fadeIn(800);
+            $('.userCollection').show();
+
+            $('#datetimepicker1', '#datetimepicker2').datetimepicker();
+            
+            fetchProduct('productItems');
+            fetchCustomer('customerDetail', 'usersListOptions');
+
+        })
+
+
+
+
+
+        var productCollection = [];
+
+
+        $('#productItems').on('change', function (e) {
+            var productCode = $(this).val();
+            if(productCode != '-1'){
+                var qtny = prompt('plz add qty', '1')    
+                var newset = getUniqueProduct(listallproduct, productCode, qtny)
+                productCollection.push(...newset)
+                
+
+                var priceTotalAmount = [];
+            
+            let html = [];
+            var listItem = []
+            productCollection.map(item => {
+                priceTotalAmount.push(item.totalAmount);
+
+                listItem.push('<li>' + item.productName + ' <span class="badge badge-info">' + item.qty +
+                    '</span></li>')
+
+
+                html.push(`<tr><td>Product Name: ${item.productName}<br/>Product Code: ${item.productCode} </td>
+                            <td>Iron Almirah,<br/>HSN Code: 94036000</td>
+                            <td>${item.qty}</td>
+                            <td>${item.productPrice}</td>
+                            <td>${ item.productDiscount}</td>
+                            <td>${ item.productAdvance}</td>
+                            <td>${ item.taxableAmount}</td>
+                            <td>${ item.igst}</td>   
+                            <td>${ item.sgst}</td>
+                            <td>${ item.totalAmount }</td>
+                        </tr>`)
+            })
+
+            $('#prd').html(html.join(' '));
+
+            $('#listItems').html(listItem.join(' '));
+
+            setTimeout(function () {
+                var price = priceTotalAmount.reduce(getTotalAmount);
+                $('#ttlPrc').html(price);
+            }, 1000)
+
+            }
+        })
+
+        var customerInfo = '';
+        $('#usersListOptions').on('change', function (e) {
+            var userId = $(this).val();
+            selectedUser = userId;
+            var name = $(this).find('option:selected').data("cname"),
+                add = $(this).find('option:selected').data("caddress"),
+                email = $(this).find('option:selected').data("cemail"),
+                mobile = $(this).find('option:selected').data("cmobile");
+
+            var html = `
+                <div class="customer-name">Name: ${name}</div>
+                <div class="customer-address">Address: ${add}</div>
+                <div class="customer-Mobile">Mobile: ${mobile}</div>
+                <div class="customer-email">Email id: ${email}</div>
+                <div class="customer-gstin">GSTIN: <span class="gst">NA</span> </div>
+                `
+            // var newset = getUniqueProduct(listallproduct, productCode, qtny)
+            // productCollection.push(...newset)
+            customerInfo = html; +
+            $('#billDate').html($('#date').val());
+            $('#orderDate').html($('#ordDate').val());
+            $('#customerDetail').html(customerInfo);
+        })
+
+        $('.js-close-popup').on('click', function () {
+            $('.overlay').fadeOut(800);
+
+            if ($('.userCollection').is(":visible")) {
+                $('.userCollection').hide();
+                return;
+            }
+            $('.product-list').fadeOut(900);
+        })
+
+
+
+        function getTotalAmount(a, b) {
+            return a + b;
+        }
+
+        function getUniqueProduct(array, prdcode, qty) {
+            var removeItems = ['productAvaiblityLoation', 'productEntryDate', 'productId', 'productStockNum',
+                'productVisiblity', '__v', '_id'
+            ]
+            let ids = new Set();
+            return array.filter((item) => {
+                if (item.productCode === prdcode) {
+                    item.productPrice = item.productPrice.toFixed(2);
+                    item.totalTax = (item.productPrice * 0.18).toFixed(2);
+                    removeItems.map(val => delete item[val]);
+                    item.taxableAmount = parseFloat(item.productPrice - item.totalTax) * parseInt(qty);
+                    item.igst = (item.productPrice * 0.09).toFixed(2) * parseInt(qty);
+                    item.sgst = (item.productPrice * 0.09).toFixed(2) * parseInt(qty);
+                    item.qty = qty;
+                    item.productDiscount = item.productDiscount || 0;
+                    item.productAdvance = item.productAdvance || 0;
+                    item.totalAmount = ((item.taxableAmount + parseFloat(item.sgst) + parseFloat(item.igst)) - (
+                        item
+                        .productDiscount + item.productAdvance)) * parseInt(item.qty);
+                    ids.add(item);
+                    return true;
+                }
+                return false
+            })
+        }
+
+        function saveInvoice() {
+            var data = {
+                productDetails: productCollection,
+                customerUUID: selectedUser,
+                invoiceDate: $('#date').val(),
+                orderDate: $('#ordDate').val(),
+                totalPrice: priceTotalAmount.reduce(getTotalAmount)
+            }
+            $.ajax({
+                url: "/api/invoice",
+                headers: {
+                    'Authorization': `Bearer ${sessionStorage.getItem("tokenkey")}`,
+                    'Content-Type': 'application/json'
+                },
+                type: 'POST',
+                data: JSON.stringify(data),
+                dataType: "json",
+                contentType: "application/json",
+                success: function (responseData, textStatus, jqXHR) {
+                    alert('Record save successfully');
+                    console.log("res==> " + responseData, "resultData==>" + textStatus, "jqXHR==>" + jqXHR);
+                },
+                error: function (err) {
+                    console.log("err==>", err.responseText)
+                },
+                done: function () {
+                    console.log("done");
+                }
+            })
+
+
+            hello();
+        }
+
+
+
+        function fetchCustomer(elementId, appendTargetElement) {
+            if (elementId && appendTargetElement) {
+                $.ajax({
+                    url: "/api/customers/all",
+                    headers: {
+                        'Authorization': `Bearer ${sessionStorage.getItem("tokenkey")}`,
+                        'Content-Type': 'application/json'
+                    },
+                    success: function (data) {
+                        var htmlData = []
+                        for (var customer of data) {
+                            let {
+                                customerName,
+                                customerEmail,
+                                customerMobile,
+                                customerAddress,
+                                customerEnrollement,
+                                customerId
+                            } = customer;
+                            htmlData.push('<option value="' + customerId + '" data-cname="' + customerName +
+                                '" data-cemail="' + customerEmail + '" data-caddress="' +
+                                customerAddress + '" data-cmobile="' + customerMobile +
+                                '" >Name: ' + customerName + ' Mobile: ' +
+                                customerMobile + '</option>')
+                        }
+                        setTimeout(function () {
+                            var html = htmlData.join(',');
+
+                            $(html).appendTo('#' + appendTargetElement);
+
+                            $('#' + elementId).html(html);
+                        }, 1000)
+                    }
+                })
+            } else {
+                alert('Params errors, put the right params')
+            }
+        }
+
+
+        function fetchProduct(appendTargetElement) {
+            $.ajax({
+                url: "/api/products",
+                headers: {
+                    'Authorization': `Bearer ${sessionStorage.getItem("tokenkey")}`,
+                    'Content-Type': 'application/json'
+                },
+                success: function (data) {
+                    for (var product of data) {
+                        let {
+                            productId,
+                            productVisiblity,
+                            productAvaiblityLoation,
+                            productCode,
+                            productPrice,
+                            productStockNum,
+                            productName
+                        } = product;
+
+                        $("<option value=" + productCode + ">" + productCode + ":" + productName +
+                            "</option>").appendTo("#" + appendTargetElement);
+
+                    }
+                    listallproduct = data;
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>
