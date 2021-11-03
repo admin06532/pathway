@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 
 const contactUsFormRoute = require('./routes/contactus');
+const loveFormRoute = require('./routes/lovercalc');
+
 
 const adminModel = require('./routes/admin');
 const {
@@ -45,6 +47,7 @@ app.use((req, res, next) => {
 
 
 app.use('/api', contactUsFormRoute);
+app.use('/api', loveFormRoute);
 
 // app.use('/api', customerRoute);
 app.use(express.static('public'));
