@@ -22,10 +22,21 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    background: '#fff',
+    paddingTop: '50px' 
+  },
+  header: {
+    color: '#838383',
+    fontSize: '1em'
+  },
+
+  mxWidth: {
+    maxWidth: '1200px',
+    margin: '0 auto'
   },
   paper: {
-    padding: theme.spacing(2),
-    backgroundColor: 'darkslategray',
+    borderTop: '1px solid #888',
+    padding: theme.spacing(1),
     borderRadius: 0,
   },
   main: {
@@ -35,21 +46,21 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(4, 0, 2),
   },
   avatar: {
-    color: 'white',
-    backgroundColor: 'green',
+    color: '#007aa0',
+    backgroundColor: 'transparent',
   },
   listWrap: {
     display: 'flex'
   },
   listItem: {
-    transition: 'transform 0.33s ease-in-out',
+    fontSize: '0.9em', 
+    color: '#6a767b',
     '&:hover' : {
       cursor: 'pointer',
-      transform: 'scale(1.1)'
     }
   },
   copy: {
-    color: 'white',
+    color: '#333',
   },
   link: {
       width: '100%',
@@ -71,10 +82,61 @@ export const Footer = () => {
 
   return (
     <div className={classes.root}>
-      <Grid container>
-        <Grid item xs={12}>
+      <Grid container className={classes.mxWidth}>
+        <Grid item md={3}>
+          <Typography variant="h6" className={classes.header}>
+              Products
+          </Typography>
+          <List>
+            <ListItem classNames={classes.listItem} disableGutters>App Builder</ListItem>
+            <ListItem classNames={classes.listItem} disableGutters>Website Builder</ListItem>
+            <ListItem classNames={classes.listItem} disableGutters>Chatbot Builder</ListItem>
+            <ListItem classNames={classes.listItem} disableGutters>Design</ListItem>
+            <ListItem classNames={classes.listItem} disableGutters>Connect</ListItem>
+          </List>
+        </Grid>
+        <Grid item md={3}>
+          <Typography variant="h6" className={classes.header}>
+              Programs
+          </Typography>
+          <List>
+            <ListItem classNames={classes.listItem} disableGutters>App Builder Reseller</ListItem>
+            <ListItem classNames={classes.listItem} disableGutters>University Program</ListItem>
+            <ListItem classNames={classes.listItem} disableGutters>Student Developer Course</ListItem>
+            <ListItem classNames={classes.listItem} disableGutters>No-Code Developer Course</ListItem>
+            <ListItem classNames={classes.listItem} disableGutters>Become an Affiliate</ListItem>
+          </List>
+        </Grid>
+        <Grid item md={3}>
+          <Typography variant="h6" className={classes.header}>
+            Research
+          </Typography>
+          <List>
+            <ListItem classNames={classes.listItem} disableGutters>About Us</ListItem>
+            <ListItem classNames={classes.listItem} disableGutters>Pricing Plans</ListItem>
+            <ListItem classNames={classes.listItem} disableGutters>Tutorials &amp; FAQs</ListItem>
+            <ListItem classNames={classes.listItem} disableGutters>Blog</ListItem>
+            <ListItem classNames={classes.listItem} disableGutters>Security</ListItem>
+          </List>
+        </Grid>
+        <Grid item md={3}>
+          <Typography variant="h6" className={classes.header}>
+             Resources
+          </Typography>
+          <List>
+            <ListItem classNames={classes.listItem} disableGutters>App Maker</ListItem>
+            <ListItem classNames={classes.listItem} disableGutters>Android App Maker</ListItem>
+            <ListItem classNames={classes.listItem} disableGutters>iPhone App Maker</ListItem>
+            <ListItem classNames={classes.listItem} disableGutters>Convert Website to App</ListItem>
+            <ListItem classNames={classes.listItem} disableGutters>How to Create an App</ListItem>
+          </List>
+        </Grid>
+      </Grid>
+        
+        <Grid item xs={12} >
           <Paper className={classes.paper} color="invert">
-            <div className={classes.main}>
+            
+            <div className={classes.main, classes.mxWidth }>
               <List className={classes.listWrap}>
                     <Link href="https://www.facebook.com/Digital-Pathway-Pvt-Ltd-111697710588591" className={classes.link} target="_blank" rel="noopener"> 
                     <ListItem className={classes.listItem}>
@@ -155,10 +217,11 @@ export const Footer = () => {
             </Typography>
           </Paper>
         </Grid>
-        </Grid>
     </div>
   );
 }
+
+
 
 
 

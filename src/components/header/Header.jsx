@@ -13,14 +13,13 @@ import {
         MenuItem,
         ListItemIcon,
         Hidden,
+        Link as Anchor
       } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import Logo from './../../assets/images/pathway-logo.png'; 
 import LogoMobile from './../../assets/images/mobile_logo.png'; 
 import clsx from 'clsx';
-import HomeContainer from './../../container/home';
-import {NotFound} from './../../components/404/NotFound';
+import {Link} from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -38,7 +37,6 @@ const useStyles = makeStyles((theme) => ({
     },
     menu: {
         marginTop: '57px',
-        // borderTop: '5px solid #e65100'
         '& .MuiPaper-rounded' : {
             borderTopLeftRadius: 0,
             borderTopRightRadius: 0,
@@ -49,8 +47,12 @@ const useStyles = makeStyles((theme) => ({
             '& .MuiListItem-root': {
                
             } 
+        },
+        '.MuiListItem-button': {
+          '&:hover' : {
+            backgroundColor: 'purple'
+          }
         }
-        
     },
     buttonBase: {
         padding: '6px 20px',
@@ -157,10 +159,18 @@ function handleClose() {
     setOpenId("");
   }
   
+function openNewUrl(path, blank){
+    var str;
+    if(blank){
+      str = '_blank'
+    }
+    window.open( path, str );
+  }
+
   return (
     <div className={classes.root}>
         <HideOnScroll {...props}>
-        <BrowserRouter>
+        {/* <BrowserRouter> */}
       
         <AppBar color="inherit">
         <Toolbar className={classes.toolbar}>
@@ -277,12 +287,33 @@ function handleClose() {
                         className={classes.menu}
                         MenuListProps={{ onMouseLeave: handleClose }}
                     >
-                      <MenuItem onClick={handleClose}>US Staffing</MenuItem>        
-                      <MenuItem onClick={handleClose}>Application Development</MenuItem>
-                      <MenuItem onClick={handleClose}>Publishing &amp; Conversion</MenuItem>
-                      <MenuItem onClick={handleClose}>E-learning platform</MenuItem>
-                      <MenuItem onClick={handleClose}>Cyber-Security</MenuItem>
-                      <MenuItem onClick={handleClose}>Machine Learning</MenuItem>
+                      <MenuItem 
+                        onClick={handleClose}
+                        to="/oursolution/ustaff"
+                        component={Link}
+                      >US Staffing</MenuItem>        
+                      <MenuItem 
+                        onClick={handleClose}
+                        to="/oursolution/appdev"
+                        component={Link}
+                        >Application Development</MenuItem>
+                      <MenuItem 
+                        onClick={handleClose}
+                        to="/oursolution/publishing"
+                        component={Link}
+                      >Publishing &amp; Conversion</MenuItem>
+                      <MenuItem 
+                        onClick={handleClose}
+                        to="/oursolution/learning"
+                        component={Link}>E-learning platform</MenuItem>
+                      <MenuItem 
+                        onClick={handleClose}
+                        to="/oursolution/cyber"
+                        component={Link}>Cyber-Security</MenuItem>
+                      <MenuItem 
+                        onClick={handleClose}
+                        to="/oursolution/machine"
+                        component={Link}>Machine Learning</MenuItem>
                     </Menu>
                   <Button
                     variant="text"
@@ -308,27 +339,45 @@ function handleClose() {
                         className={classes.menu}
                         MenuListProps={{ onMouseLeave: handleClose }}
                     >
-                      <MenuItem onClick={handleClose}>RPO</MenuItem>
-                      <MenuItem onClick={handleClose}>Technology</MenuItem>
-                      <MenuItem onClick={handleClose}>Education</MenuItem>
-                      <MenuItem onClick={handleClose}>Health Care </MenuItem>
-                      <MenuItem onClick={handleClose}>Networking</MenuItem>
-                      <MenuItem onClick={handleClose}>Artificial Intellisense</MenuItem>
+                      <MenuItem 
+                        onClick={handleClose} 
+                        to="/enterprise/RPO"
+                        component={Link}
+                      >RPO</MenuItem>
+                      <MenuItem 
+                        onClick={handleClose}
+                        to="/details/tech"
+                        component={Link}>Technology</MenuItem>
+                      <MenuItem 
+                      onClick={handleClose} 
+                      to="/enterprise/education"
+                      component={Link}
+                      >Education</MenuItem>
+                      <MenuItem 
+                        onClick={handleClose} 
+                        to="/enterprise/health"
+                        component={Link}>Health Care </MenuItem>
+                      <MenuItem 
+                        onClick={handleClose} 
+                        to="/enterprise/networking"
+                        component={Link}>Networking</MenuItem>
+                      <MenuItem onClick={handleClose} 
+                        to="/enterprise/ai"
+                        component={Link}>Artificial Intellisense</MenuItem>
                     </Menu>
 
                     <Button
                         variant="text"
-                        component={Link}
                         color="default"
                         className={classes.buttonBase}
-                        onClick={handleClick}
+                        onClick={ () => openNewUrl("https://www.aenyvish.com/", true)}
                     >
-                        CONTENT &amp; PUBLISHING
+                      CONTENT &amp; PUBLISHING
                   </Button>
                   <Button
                     variant="text"
                     component={Link}
-                    to="/"
+                    to="/whypathways"
                     color="default"
                     className={classes.buttonBase}
                   >
@@ -337,7 +386,7 @@ function handleClose() {
                   <Button
                     variant="text"
                     component={Link}
-                    to="/"
+                    to="/career"
                     color="default"
                     className={classes.buttonBase}
                   >
@@ -346,7 +395,7 @@ function handleClose() {
                   <Button
                     variant="text"
                     component={Link}
-                    to="/"
+                    to="/contactus"
                     color="default"
                     className={classes.buttonBase}
                   >
@@ -356,13 +405,6 @@ function handleClose() {
               )}
             </Toolbar>
       </AppBar>
-      <Switch>
-            {/* <Route exact path="#" component={HomeContainer} /> */}
-            <Route exact path="/College" component={NotFound} />
-            <Route exact path="/About" component={NotFound} />
-            <Route exact path="/contact" component={NotFound} />
-        </Switch>    
-    </BrowserRouter>
 </HideOnScroll>
 </div>
   );
