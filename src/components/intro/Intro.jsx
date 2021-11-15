@@ -1,6 +1,6 @@
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
-import {Typography, Grid, Link} from "@material-ui/core";
+import {Typography, Grid, Button} from "@material-ui/core";
 import AboutImg from "./../../assets/images/about_us.png";
 
 const useStyles = makeStyles((theme) => ({
@@ -98,7 +98,7 @@ export const Intro = () => {
               limits and skyrocket your brand with our services.
             </Typography>
             <Grid align="center" style={{marginTop: '50px'}} >
-              <Link className={classes.btnStrach} href="/about">Know more...</Link>
+              <Button className={classes.btnStrach} href="/about">Know more...</Button>
             </Grid>
           </Grid>
         </Grid>
