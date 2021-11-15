@@ -65,7 +65,6 @@ export const IntroEcom = () => {
                 <Grid align="center">
                   <Button className={classes.btnStrach}>Know more...</Button>
                 </Grid>
-                
             </Grid>
         </Grid>
       </Grid>

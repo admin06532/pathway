@@ -1,70 +1,125 @@
-import React from 'react';
-import MenuIcon from '@material-ui/icons/Menu';
-import {
-        AppBar,
-        Toolbar,
-        IconButton,
-        Typography,
-        useMediaQuery,
-        Button,
-        useScrollTrigger,
-        Slide,
-        Menu,
-        MenuItem,
-        ListItemIcon,
-        Hidden,
-        Link,
-        Container
-      } from "@material-ui/core";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import clsx from 'clsx'; 
+import React from "react";
+import {Typography, Grid} from "@material-ui/core";
+import {makeStyles} from "@material-ui/core/styles";
+import AboutImage from "./../../assets/images/heroshot/banner_2-min.png";
+import clsx from "clsx";
 
-export const AboutUs = () => (
-    <Container>
-        <Typography variant='h5' component='div' align='left'>
-            About Us (Banner image content)
-        </Typography>
-        <Typography variant="p">
-            Searching for the best publishing, IT, and manpower services for your business? XXX will deliver services that will only boost your brand reputation and take your business to the next level.
-        </Typography>
-        <Typography variant="p">
-        We’re based in Noida; our primary motto is to serve our publishing, IT, and manpower services to small and large businesses. As XXXX (Replace with your company name) is one of the leading names in the Noida and Delhi NCR region, we’re already helping many small-scale and multinational companies across the country. 
-</Typography>
-<Typography variant="p">
-        By partnering with XXXX (Replace with your company name), we’re always ready to maintain your peace of mind by delivering the best possible services. XXXX (Replace with your company name) is India’s one of the leading publishing and IT services companies available 24/7/365. At our company, we encourage you to push your limits and skyrocket your brand with our services. 
-        </Typography>
-<Typography variant="p">
+const useStyles = makeStyles(() => ({
+  root: {
+    flexGrow: 1,
+    backgroundPosition: "center right 50px",
+    backgroundRepeat: "no-repeat",
+    paddingBottom: "50px",
+  },
+  deskTopMaxWidth: {
+    maxWidth: "1200px",
+    margin: "0 auto",
+  },
+  banner: {
+    boxSizing: "border-box",
+    paddingTop: "100px",
+    minHeight: "100vh",
+    width: "100%",
+    backgroundImage: `url(${AboutImage})`,
+    backgroundSize: "cover",
+    position: "relative",
+    "& .MuiTypography-h2": {
+      position: "absolute",
+      left: "50%",
+      top: "28%",
+      fontWeight: "400",
+    },
+  },
+  box: {
+    position: "absolute",
+    left: "50%",
+    top: "40%",
+    maxWidth: "450px",
+  },
+}));
 
-        At XXXX (Replace with your company name), we’re blessed with well-qualified, professional, and certified team members who help you preserve your resources and still get the desired results. 
+export const AboutUs = () => {
+  const classes = useStyles();
 
+  return (
+    <Grid container>
+      <div className={classes.banner}>
+        <Typography
+          variant='h2'
+          className={classes.deskTopMaxWidth}
+          component='div'
+          align='left'
+        >
+          About Us
         </Typography>
-<Typography variant="p">
-        Our vision is to become our country’s leading publishing and IT services company and keep delivering quality recruitment services to our clients. 
+        <div className={classes.box}>
+          <Typography gutterBottom={true}>
+            Searching for the best publishing, IT, and manpower services for
+            your business? Pathways will deliver services that will only boost
+            your brand reputation and take your business to the next level.
+          </Typography>
+          <Typography gutterBottom={true}>
+            We’re based in Noida; our primary motto is to serve our publishing,
+            IT, and manpower services to small and large businesses. As Pathways
+            is one of the leading names in the Noida and Delhi NCR region, we’re
+            already helping many small-scale and multinational companies across
+            the country.
+          </Typography>
+        </div>
+      </div>
+      <div className={clsx("content", classes.deskTopMaxWidth)}>
+        <Typography gutterBottom={true} style={{paddingTop: '40px'}}>
+          By partnering with Pathways, we’re always
+          ready to maintain your peace of mind by delivering the best possible
+          services. Pathways is India’s one of the
+          leading publishing and IT services companies available 24/7/365. At
+          our company, we encourage you to push your limits and skyrocket your
+          brand with our services.
         </Typography>
-<Typography variant="p">
-        Our mission is to deliver customer-oriented, results-driven, affordable, and innovative services to our national and international clients. 
+        <Typography gutterBottom={true}>
+          At Pathways, we’re blessed with
+          well-qualified, professional, and certified team members who help you
+          preserve your resources and still get the desired results.
         </Typography>
-<Typography variant="p">
-        To keep an innovative approach towards all our clients, keeping our core values and principles in our mind. We believe in our principles and core values that will indeed help us in growing our business. 
+        <Typography gutterBottom={true}>
+          Our vision is to become our country’s leading publishing and IT
+          services company and keep delivering quality recruitment services to
+          our clients.
         </Typography>
-<Typography variant="p">
-
-        As of now, we’re already the official business partners of many small and large businesses based all over India. 
+        <Typography gutterBottom={true}>
+          Our mission is to deliver customer-oriented, results-driven,
+          affordable, and innovative services to our national and international
+          clients.
         </Typography>
-<Typography variant="p">
-
-        Our core team members are working in publishing, IT services, and recruitment services for decades. As a result, we have experience in working for different industries. 
+        <Typography gutterBottom={true}>
+          To keep an innovative approach towards all our clients, keeping our
+          core values and principles in our mind. We believe in our principles
+          and core values that will indeed help us in growing our business.
         </Typography>
-<Typography variant="p">
-
-        At XXXX (Replace with your company name), everyone hates HIDDEN CHARGES, and we keep our quotes crystal clear with our clients; whatever quotes we provide are final and non-negotiable. 
-
+        <Typography gutterBottom={true}>
+          As of now, we’re already the official business partners of many small
+          and large businesses based all over India.
         </Typography>
-<Typography variant="p">
-        When you share your project details with us, we manage the briefing and conduct meetings for completing your projects within the deadline. 
+        <Typography gutterBottom={true}>
+          Our core team members are working in publishing, IT services, and
+          recruitment services for decades. As a result, we have experience in
+          working for different industries.
         </Typography>
-<Typography variant="p">
-        At XXXX (Replace with your company name), we deliver IT services, recruitment, and publishing services at the best possible value. When you partner with our company, you’ve already beaten your competitors. 
+        <Typography gutterBottom={true}>
+          At Pathways, everyone hates HIDDEN
+          CHARGES, and we keep our quotes crystal clear with our clients;
+          whatever quotes we provide are final and non-negotiable.
         </Typography>
-    </Container>
-)
+        <Typography gutterBottom={true}>
+          When you share your project details with us, we manage the briefing
+          and conduct meetings for completing your projects within the deadline.
+        </Typography>
+        <Typography gutterBottom={true}>
+          At Pathways, we deliver IT services,
+          recruitment, and publishing services at the best possible value. When
+          you partner with our company, you’ve already beaten your competitors.
+        </Typography>
+      </div>
+    </Grid>
+  );
+};
