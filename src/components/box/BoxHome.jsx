@@ -1,10 +1,10 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Avatar, Button, useMediaQuery, Card, CardContent, Grid, Typography } from '@material-ui/core';
+import { useMediaQuery, Card, CardContent, Grid, Typography, Avatar, Button } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
-    minHeight: 360,
+    minHeight: 320,
     boxSizing: 'border-box',
     boxShadow: '0 0 20px 0 rgb(64 189 237 / 50%)',
     '&:hover': {
@@ -15,9 +15,8 @@ const useStyles = makeStyles({
     marginBottom: 12,
   },
   container: {
-      paddingTop: '10px',
+      paddingTop: '50px',
       boxSizing: 'border-box',
-      
   },
   gridItemMobile : {
       margin: '0 40px 40px',
@@ -25,7 +24,7 @@ const useStyles = makeStyles({
   },
   gridItemDesktop : {
     margin: '0 20px 40px 0',
-    maxWidth: '300px',
+    maxWidth: '300px'
   },
   heading : {
     marginTop: '30px',
@@ -50,40 +49,22 @@ const useStyles = makeStyles({
   }
 });
 
-
-export const SoftwareConsultancy = () => {
+export const BoxHome = () => {
   const classes = useStyles();
   const isMobile = useMediaQuery(useTheme().breakpoints.down("sm"));
 
   return (
       <>
-        <Typography variant="h3" component="h3" gutterBottom align="center" className={classes.heading}>IT Consulting</Typography>
             <Grid container justifyContent="center" spacing={0} className={classes.container}>
-            
             <Grid item xs={12} md={3} className={isMobile ? classes.gridItemMobile : classes.gridItemDesktop}>
                 <Card className={classes.root}>
                     <CardContent>
-                      <Avatar className={classes.avatar}>PPR</Avatar>
+                        <Avatar className={classes.avatar}>PC</Avatar>
                             <Typography variant="h6" component="h6">
-                            Permanent Placement Recruitment
+                                Publishing &amp; Conversion
                             </Typography>
                             <Typography className={classes.pos} color="textSecondary">
-                                Our recruitment consultants follow a client-based strategy to search for and make available the job-ready talent, thereby cutting your cost on recruitment process.
-                            </Typography>
-                            <Button color="primary" className={classes.btnStrach}>Know More...</Button>
-                    </CardContent>
-                </Card>
-
-            </Grid>
-            <Grid item xs={12} md={3} className={isMobile ? classes.gridItemMobile : classes.gridItemDesktop}>
-                <Card className={classes.root}>
-                    <CardContent>
-                    <Avatar className={classes.avatar}>CPR</Avatar>
-                            <Typography variant="h6" component="h6">
-                              Contract Placement Recruitment
-                            </Typography>
-                            <Typography className={classes.pos} color="textSecondary">
-                              Our CPR is just the solution you need for a temporary job without running up huge expenses on employment formalities.
+                                Stellar Digital Content Publishing & Conversion Services for Your Mushrooming Business
                             </Typography>
                             <Button color="primary" className={classes.btnStrach}>Know More...</Button>
                     </CardContent>
@@ -92,12 +73,12 @@ export const SoftwareConsultancy = () => {
             <Grid item xs={12} md={3} className={isMobile ? classes.gridItemMobile : classes.gridItemDesktop}>
                 <Card className={classes.root}>
                     <CardContent>
-                    <Avatar className={classes.avatar}>O</Avatar>
+                    <Avatar className={classes.avatar}>CSS</Avatar>
                             <Typography variant="h6" component="h6">
-                                Outsourcing
+                                Cyber Security Solutions
                             </Typography>
                             <Typography className={classes.pos} color="textSecondary">
-                                We also conduct outsourcing a business practice in which certain talent acquisition functions required by the business are performed on a contract basis
+                                Our cyber security solutions safeguard your data and IT infrastructure from both internal and external threats.
                             </Typography>
                             <Button color="primary" className={classes.btnStrach}>Know More...</Button>
                     </CardContent>
@@ -106,12 +87,26 @@ export const SoftwareConsultancy = () => {
             <Grid item xs={12} md={3} className={isMobile ? classes.gridItemMobile : classes.gridItemDesktop}>
                 <Card className={classes.root}>
                     <CardContent>
-                        <Avatar className={classes.avatar}>US</Avatar>
+                    <Avatar className={classes.avatar}>EP</Avatar>
                             <Typography variant="h6" component="h6">
-                            US staffing
+                                E-Learning Platforms
                             </Typography>
                             <Typography className={classes.pos} color="textSecondary">
-                             Our US staffing services help you improve operational &amp; organizational activities by putting right people with right capability at right costs doing the right thing.
+                                Delivering Cost-Effective Platform Services for Your Business. Professional e-learning services are in higher demand as a result of technological improvements. 
+                            </Typography>
+                            <Button color="primary" className={classes.btnStrach}>Know More...</Button>
+                    </CardContent>
+                </Card>
+            </Grid>
+            <Grid item xs={12} md={3} className={isMobile ? classes.gridItemMobile : classes.gridItemDesktop}>
+                <Card className={classes.root}>
+                    <CardContent>
+                    <Avatar className={classes.avatar}>ML</Avatar>
+                            <Typography variant="h6" component="h6">
+                                Machine Learning
+                            </Typography>
+                            <Typography className={classes.pos} color="textSecondary">
+                                Develop cutting-edge intelligence to boost your productivity. Machine intelligent systems have affected enterprises in a variety of ways during the last few years.
                             </Typography>
                             <Button color="primary" className={classes.btnStrach}>Know More...</Button>
                     </CardContent>
@@ -119,6 +114,5 @@ export const SoftwareConsultancy = () => {
             </Grid>
         </Grid>
         </>
-      
-  );
+    );
 }

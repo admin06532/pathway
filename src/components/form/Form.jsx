@@ -126,7 +126,7 @@ export const Form = () => {
 
   return (
     <>
-    <Typography variant="h3" align="center" spacing={2}> Contact Us </Typography>
+    <Typography variant="h3" align="center" style={{marginTop: '50px'}}> Contact Us </Typography>
     <Grid container justifyContent="flex-end" className={classes.container}>
     
         <div className={classes.snackbar}>

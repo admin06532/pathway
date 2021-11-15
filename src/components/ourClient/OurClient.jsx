@@ -68,7 +68,7 @@ export const OurClient = (props) =>  {
 
     return (
         <Grid container direction="column" className={classes.container}>
-            <Typography variant="h3" align="center">Our Clients</Typography>
+            <Typography variant="h4" align="center">Our Clients</Typography>
                 <Carousel 
                     className={classes.root}
                     show={5}
