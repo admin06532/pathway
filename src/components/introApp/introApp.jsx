@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import { Typography, List, ListItem, Button } from '@material-ui/core';
 import AppDevPng from './../../assets/images/appDev.png';
-
+import {BoxHome} from './../box';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -39,6 +39,9 @@ const useStyles = makeStyles((theme) => ({
       color: '#fff'
     }
   },
+  link: {
+    textDecoration: 'none'
+  }
 }));
 
 export const IntroApp = () => {
@@ -66,12 +69,14 @@ export const IntroApp = () => {
                   <ListItem>Progressive Web Apps (PWA)</ListItem>
                 </List>
                 <Grid align="center">
-                  <Button className={classes.btnStrach}>Know more...</Button>
+                  <Link to="/about" className={classes.link}>
+                    <Button color="primary" variant="contained">Know more...</Button>
+                  </Link>
                 </Grid>
-                
             </Grid>
         </Grid>
       </Grid>
+      <BoxHome />
     </Grid>
   );
 }

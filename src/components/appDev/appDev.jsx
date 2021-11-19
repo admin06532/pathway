@@ -70,10 +70,10 @@ Cutting-edge Technologies We Use for Application Development
 	Blockchain 
 Why Choose Us?
 <Typography variant="body1">Understand You: We uncover your story, learn about your objectives, and devise a strategy to help you reach your target audience and develop your business.</Typography>
-
 <Typography variant="body1">Budget-Friendly: We work smart, fast, and always complete our projects on schedule without having to increase your budget, whether it's building a website, coding a mobile app, or creating a marketing campaign.</Typography>
 <Typography variant="body1">Exceptional Approach:  Our designers, developers, and project managers use a unique, proven approach to ensure that all of our projects are of the greatest quality, based on your needs.</Typography>
 <Typography variant="body1">24*7 Assistance: Our clients prefer us not only because we are fantastic and reasonably priced, but also because we are constantly available. Whether you have a last-minute emergency or require a status report, we are only a phone call, email, or text away!</Typography>
+
 </Grid>
 )
 } 

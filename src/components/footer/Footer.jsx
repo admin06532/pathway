@@ -6,7 +6,8 @@ import {
     ListItem,
     Grid,
     Typography,
-    Link
+    Link,
+    Button
   } from '@material-ui/core';
 import clsx from 'clsx';
 import Logo from './../../assets/images/mobile_logo.png'
@@ -77,8 +78,16 @@ const useStyles = makeStyles((theme) => ({
         textDecoration: 'none',
         color: ''
       }
-
   },
+  banner : {
+    background: 'rgba(63,189,237,1)',
+    width: '100%',
+    marginBottom: '20px',
+    textAlign: 'center',
+    color: '#fff',
+    fontWeight: '500',
+    padding: '20px 0'
+  }
 }));
  
 
@@ -86,8 +95,15 @@ const useStyles = makeStyles((theme) => ({
 export const Footer = () => {
   const classes = useStyles();
 
+  const goToTop = () => {
+    document.querySelector('html').scrollTop = 0;
+  }
+
   return (
     <div className={classes.root}>
+      <div className={classes.banner} >
+          <Button onClick={goToTop} color="inherit">Back to top</Button>
+      </div>
       <Grid container className={classes.mxWidth}>
         <Grid item md={3}>
           <Typography variant="h6" className={classes.header}>

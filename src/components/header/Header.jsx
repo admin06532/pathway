@@ -13,7 +13,6 @@ import {
         MenuItem,
         ListItemIcon,
         Hidden,
-        Link as Anchor
       } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Logo from './../../assets/images/pathway-logo.png'; 
