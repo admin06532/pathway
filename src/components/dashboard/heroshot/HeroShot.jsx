@@ -32,16 +32,25 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "flex-end",
     alignItems: "center",
+    '&:after': {
+      content: '""',
+      backgroundImage: 'linear-gradient(to bottom, rgb(64 189 237 / 0%), rgb(64 189 237 / 50%))',
+      height: '30px',
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      bottom: 0,
+      zIndex: 0
+    }
   },
   circle: {
-    borderRadius: "50%",
     position: "relative",
     alignItems: "center",
     display: "flex",
     justifyContent: "center",
     borderRadius: "50%",
-    width: "149px",
-    height: "149px",
+    width: "160px",
+    height: "160px",
     "&:hover": {
       boxShadow: "3px 13px 19px 0px rgb(50 50 50 / 52%)",
       backgroundColor: '#e65100',
@@ -54,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
     color: "cyan",
     width: "calc(50vw)",
     position: "absolute",
-    bottom: "0",
+    bottom: 0,
     textAlign: "left",
     padding: "20px",
     borderRadius: "4px",
@@ -83,19 +92,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const HeroShot = () => {
-  
-  
-  
 
   const classes = useStyles();
   
   const [firstSvgEnd, setFirstSvgEnd] = useState(false);
   const [secondSvgEnd, setSecondSvgEnd] = useState(false);
   const [thirdSvgEnd, setThirdSvgEnd] = useState(false);
-
-  
   const [element, setElement] = useState(null);
   const [toolTip, setToolTip] = useState("");
+
   const handleBoxClick = (e) => {
     if (firstSvgEnd && secondSvgEnd && thirdSvgEnd) {
       setElement(e.target.id);
@@ -137,13 +142,11 @@ export const HeroShot = () => {
         setToolTip("");
     }
 
-    
     if(renderCircle === "true"){
       setFirstSvgEnd(true);
       setSecondSvgEnd(true);
       setThirdSvgEnd(true);
     }
-
   }, [element]);
 
   return (
@@ -156,7 +159,9 @@ export const HeroShot = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            width: 400,
+            position: 'relative',
+            zIndex: 2,
+            width: "50vw",
             height: "100vh",
             bgcolor: "rgba(0,0,0,0.8)",
             color: "white",
@@ -203,7 +208,10 @@ export const HeroShot = () => {
             repeatDuration='20s'
             onEnd={setFirstSvgEnd}
           />}
-          <Typography variant='h5' component='div' align='left'>
+          <Typography 
+            variant='h5'
+            component='h5'
+            align='left'>
             IT Consulting
           </Typography>
         </Box>
@@ -235,7 +243,7 @@ export const HeroShot = () => {
           )}
           <Typography
             variant='h5'
-            component='div'
+            component='h5'
             align='left'
           >
             Publishing
@@ -269,7 +277,7 @@ export const HeroShot = () => {
           )}
           <Typography
             variant='h5'
-            component='div'
+            component='h5'
             align='left'
           >
             Technology

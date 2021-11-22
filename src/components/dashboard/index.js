@@ -8,4 +8,5 @@ export {SoftwareConsultancy} from './softwareConsultancy/SoftwareConsultancy';
 export {SvgCircle} from './svgCircle/SvgCircle';
 export {IntroApi} from './intoApi/IntroApi';
 export {IntroCms} from './introCms/introCms';
+export {OtherServices} from './boxOther/otherServices';
 

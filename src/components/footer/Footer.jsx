@@ -16,7 +16,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     background: '#fff',
-    paddingTop: '50px' 
   },
   header: {
     color: '#838383',
@@ -64,7 +63,6 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '12px'
   },
   link: {
-      textDecoration: 'none',
       color: '#666666',
       display: 'inline-block',
       position: 'relative',

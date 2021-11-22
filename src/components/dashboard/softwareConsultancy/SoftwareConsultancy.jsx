@@ -1,12 +1,24 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Avatar, Button, useMediaQuery, Card, CardContent, Grid, Typography } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import {  useMediaQuery, Grid, Typography } from '@material-ui/core';
+import DemoImage from "./../../../assets/images/ImageInBg.PNG";
+import Polygon from "./../../../assets/images/polygon.png";
+import { CustomCard, SectionTitle, SectionBackground } from './../../common';
 
 const useStyles = makeStyles({
+  containerWrapper: {
+    position: 'relative',
+    backgroundColor: "#f3f4fd",
+    backgroundImage: Polygon,
+    backgroundPosition: 'center right',
+    backgroundRepeat: 'no-repeat',
+    paddingTop: 50,
+    paddingBottom: 50
+  },
   root: {
     minHeight: 360,
     boxSizing: 'border-box',
+    
     boxShadow: '0 0 20px 0 rgb(64 189 237 / 50%)',
     '&:hover': {
         boxShadow: '0 2px 30px 0 rgb(64 189 237 / 50%)'
@@ -18,104 +30,71 @@ const useStyles = makeStyles({
   container: {
       paddingTop: '10px',
       boxSizing: 'border-box',
-      
   },
-  gridItemMobile : {
-      margin: '0 40px 40px',
-      maxWidth: '320px'
-  },
-  gridItemDesktop : {
-    margin: '0 20px 40px 0',
-    maxWidth: '300px',
-  },
-  heading : {
-    marginTop: '30px',
-  },
-  avatar: {
-    background: 'linear-gradient(45deg,#3FBDED 0%,#00A4E8 100%)',
-    width: '70px',
-    boxShadow: '0 5px 15px 0 rgb(0 0 0 / 15%)',
-    height: '70px',
-    marginBottom: '10px'
-  },
-  link: {
-    textDecoration: 'none'
-  }
 });
 
 
 export const SoftwareConsultancy = () => {
   const classes = useStyles();
+  const theme = useTheme();
   const isMobile = useMediaQuery(useTheme().breakpoints.down("sm"));
 
   return (
-      <>
-        <Typography variant="h3" component="h3" gutterBottom align="center" className={classes.heading}>IT Consulting</Typography>
-            <Grid container justifyContent="center" spacing={0} className={classes.container}>
-            
-            <Grid item xs={12} md={3} className={isMobile ? classes.gridItemMobile : classes.gridItemDesktop}>
-                <Card className={classes.root}>
-                    <CardContent>
-                      <Avatar className={classes.avatar}>PPR</Avatar>
-                            <Typography variant="h6" component="h6">
-                            Permanent Placement Recruitment
-                            </Typography>
-                            <Typography className={classes.pos} color="textSecondary">
-                                Our recruitment consultants follow a client-based strategy to search for and make available the job-ready talent, thereby cutting your cost on recruitment process.
-                            </Typography>
-                            <Button color="primary" variant="contained" fullWidth>Know More...</Button>
-                    </CardContent>
-                </Card>
-
+      <Grid container className={classes.containerWrapper}>
+        <SectionBackground imagePath={DemoImage} />
+        <section className="container">
+          <Grid container spacing={2} direction="row-reverse">
+            <Grid item xs={12} md={6}>
+            <SectionTitle>
+              Technology 
+            </SectionTitle>
+        <Typography variant="body1">
+          Technology, we believe, has the potential to improve customer service, raise revenue, and streamline all company procedures. We can help you with a variety of services, such as strategy, corporate application support, bespoke application development of all types and stages, and pioneering technology.
+        </Typography>
+        <Typography variant="body1" gutterBottom={true}>
+          Digital Pathway is a prominent tech-driven platform that aims to assist businesses in assembling a team of highly efficient and competent experts, as well as serve people by expanding their job options. We take satisfaction in assisting in the creation of a professional environment that is conducive to achieving the goal and vision upon which businesses are founded. What’s more, we offer a multitude of services, including AI Development, Web Development, App Development, Content Production Service, Internet Marketing Service, IT Architecture, to name a few. 
+        </Typography>
+        </Grid>
+          </Grid>
+            <Grid container spacing={3} className={classes.container}>
+            <Grid item xs={12} md={3}>
+              <CustomCard 
+                avatarLabel="AD"
+                boxHeading="AI Development "
+                boxPara={['By applying AI to your products, business operations, new domains, developing tools, and more, we help your company create amazing customer experiences and become smarter.']}
+                boxUrl="/placement"
+                boxButtonlabel="Know More..."
+              />
             </Grid>
-            <Grid item xs={12} md={3} className={isMobile ? classes.gridItemMobile : classes.gridItemDesktop}>
-                <Card className={classes.root}>
-                    <CardContent>
-                    <Avatar className={classes.avatar}>CPR</Avatar>
-                            <Typography variant="h6" component="h6">
-                              Contract Placement Recruitment
-                            </Typography>
-                            <Typography className={classes.pos} color="textSecondary">
-                              Our CPR is just the solution you need for a temporary job without running up huge expenses on employment formalities.
-                            </Typography>
-                            <Button color="primary" variant="contained" fullWidth>Know More...</Button>
-                    </CardContent>
-                </Card>
+            <Grid item xs={12} md={3}>
+              <CustomCard 
+                avatarLabel="WD"
+                boxHeading="Web Development"
+                boxPara={['Our web developers assist brands in navigating the ever-changing digital landscape by being client-focused, customer-centric, and designing website solutions that produce concrete business results.']}
+                boxUrl="/placement"
+                boxButtonlabel="Know More..."
+              />
             </Grid>
-            <Grid item xs={12} md={3} className={isMobile ? classes.gridItemMobile : classes.gridItemDesktop}>
-                <Card className={classes.root}>
-                    <CardContent>
-                    <Avatar className={classes.avatar}>O</Avatar>
-                            <Typography variant="h6" component="h6">
-                                Outsourcing
-                            </Typography>
-                            <Typography className={classes.pos} color="textSecondary">
-                                We also conduct outsourcing a business practice in which certain talent acquisition functions required by the business are performed on a contract basis
-                            </Typography>
-                            <Button color="primary" variant="contained" fullWidth>Know More...</Button>
-                    </CardContent>
-                </Card>
+            <Grid item xs={12} md={3}>
+              <CustomCard 
+                avatarLabel="AD"
+                boxHeading="App Development "
+                boxPara={['We can assist you in developing consumer-facing or business-to-business apps for a variety of digital platforms, including mobile, online, desktop, smartwatch, VR, and AR.']}
+                boxUrl="/placement"
+                boxButtonlabel="Know More..."
+              />
             </Grid>
-            <Grid item xs={12} md={3} className={isMobile ? classes.gridItemMobile : classes.gridItemDesktop}>
-                <Card className={classes.root}>
-                    <CardContent>
-                        <Avatar className={classes.avatar}>US</Avatar>
-                            <Typography variant="h6" component="h6">
-                            US staffing
-                            </Typography>
-                            <Typography className={classes.pos} color="textSecondary">
-                             Our US staffing services help you improve operational &amp; organizational activities by putting right people with right capability at right costs doing the right thing.
-                            </Typography>
-                            <Grid align="center">
-                              <Link to="/usstaff" className={classes.link}>
-                                <Button color="primary" variant="contained" fullWidth>Know More...</Button>
-                              </Link>
-                            </Grid>
-                    </CardContent>
-                </Card>
+            <Grid item xs={12} md={3}>
+            <CustomCard 
+                avatarLabel="SS"
+                boxHeading="SEO Services"
+                boxPara={['Our staff is dedicated to providing the most efficient and lucrative internet marketing methods to help your organization achieve revenue-generating goals.']}
+                boxUrl="/usstaff"
+                boxButtonlabel="Know More..."
+              />
             </Grid>
         </Grid>
-        </>
-      
+        </section>
+      </Grid>
   );
 }

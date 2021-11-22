@@ -1,5 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import { Header } from './components/header';
 import HomeContainer from './container/home';
 
@@ -19,11 +20,13 @@ import { CustomerMgmt } from './components/customerMgmt';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import {theme} from './theme';
+import './common.css';
 
 const App = () => {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Router>
       <ScrollToTop />
       <Header />

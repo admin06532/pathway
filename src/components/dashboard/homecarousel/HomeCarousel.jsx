@@ -36,6 +36,9 @@ const useStyles = makeStyles((theme) => ({
 export const HomeCarousel = (props) =>  {
     const classes = useStyles();
     const items = [
+        "Recruitment Process Outsourcing",
+        "Application Development",
+        "Publishing &amp; conversion",
         "CRM Application Development",
         "ERP School Management System",
         "API Integration",

@@ -2,16 +2,21 @@ import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {Typography, Grid, Button} from "@material-ui/core";
 import {Link} from 'react-router-dom';
+import { SectionTitle, SectionBackground } from './../../common';
 import AboutImg from "./../../../assets/images/about_us.png";
+import DemoImage from "./../../../assets/images/ImageInBg.PNG";
+import Polygon from "./../../../assets/images/polygon.png";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    position: 'relative',
     flexGrow: 1,
-    backgroundImage: `url(${AboutImg})`,
-    backgroundPosition: "center right 143px",
+    backgroundImage: `url(${Polygon})`,
+    backgroundColor: '#fff',
+    backgroundPosition: "center left -10px",
     backgroundSize: "32%",
     backgroundRepeat: "no-repeat",
-    backgroundColor: "#fafafa",
     paddingBottom: "50px",
   },
   paper: {
@@ -21,16 +26,39 @@ const useStyles = makeStyles((theme) => ({
   control: {
     padding: theme.spacing(2),
   },
-  initial: {
-    "&:first-letter": {
-      fontSize: "40px",
+  
+  bannerImage: {
+    position: 'absolute',
+    right: '-5%',
+    borderRadius: '40px',
+    width: '40%',
+    textAlign: 'center',
+    padding: 0,
+    top: '15%',
+    zIndex: 2,    
+    '&::before': {
+      content: '""',
+      display: "block",
       position: "absolute",
-      lineHeight: 1,
+      borderRadius: "40px",
+      zIndex: 0,
+      top: '-20px',
+      left: 0,
+      height: "100%",
+      width: "110%",
+      background: "linear-gradient( 45deg,#3FBDED 0%,#00A4E8 100%)",
+      transform: "rotate(10deg)",
     },
   },
-  link: {
-    textDecoration: 'none'
-  } 
+  img: {
+    height: "100%",
+    margin: "auto",
+    borderRadius: "80px 0px 0px 80px",
+    boxShadow: "5px 5px 36px rgb(64 189 237 / 50%)",
+    backgroundColor: '#ffffff',
+    position: 'relative'
+  }
+
 }));
 
 export const IntroApp = () => {
@@ -38,18 +66,19 @@ export const IntroApp = () => {
 
   return (
     <Grid container className={classes.root}>
+      <SectionBackground imagePath={DemoImage} align="right"/>
+       
+      <section className="container">
       <Grid
         item
         xs={12}
         md={6}
         style={{marginLeft: 50, marginTop: 50, textAlign: "left"}}
       >
-        <Typography variant='h3' align='center'>
-          Introduction
-        </Typography>
+        <SectionTitle>Introduction</SectionTitle>
         <Grid container>
           <Grid item>
-            <Typography gutterBottom={true} className={classes.initial}>
+            <Typography gutterBottom={true}>
               Digital Pathway has the expertise that can help companies make use
               of digital technology to leverage their content and get new
               valuable products. With fantastic solutions from our experts, you
@@ -83,7 +112,7 @@ export const IntroApp = () => {
               available 24/7/365. At our company, we encourage you to push your
               limits and skyrocket your brand with our services.
             </Typography>
-            <Grid align="center" style={{marginTop: '50px'}} >
+            <Grid align="center">
               <Link to="/about" className={classes.link}>
                   <Button color="primary" variant="contained">Know more...</Button>
               </Link>
@@ -91,6 +120,7 @@ export const IntroApp = () => {
           </Grid>
         </Grid>
       </Grid>
+      </section>
     </Grid>
   );
 };

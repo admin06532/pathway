@@ -6,7 +6,7 @@ import {
   IntroApp,
   IntroEcom,
   IntroApi,
-  IntroCms
+  IntroCms,
 } from "./../../components/dashboard";
 import {Form} from "./../../components/form";
 
@@ -14,8 +14,8 @@ export const HomeContainer = () => {
   return (
     <>
       <HeroShot />
-      <SoftwareConsultancy />
       <IntroApp />
+      <SoftwareConsultancy />
       <IntroCms />
       <IntroEcom />
       <IntroApi />
