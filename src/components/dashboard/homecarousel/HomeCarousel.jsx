@@ -38,7 +38,7 @@ export const HomeCarousel = (props) =>  {
     const items = [
         "Recruitment Process Outsourcing",
         "Application Development",
-        "Publishing &amp; conversion",
+        "Publishing & conversion",
         "CRM Application Development",
         "ERP School Management System",
         "API Integration",

@@ -13,7 +13,7 @@ const useStyles = makeStyles({
     backgroundPosition: 'center right',
     backgroundRepeat: 'no-repeat',
     paddingTop: 50,
-    paddingBottom: 50
+    paddingBottom: 50,
   },
   root: {
     minHeight: 360,
@@ -30,6 +30,8 @@ const useStyles = makeStyles({
   container: {
       paddingTop: '10px',
       boxSizing: 'border-box',
+      position: 'relative',
+      zIndex: 5
   },
 });
 

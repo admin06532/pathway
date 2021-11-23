@@ -8,6 +8,7 @@ import ECommPng from './../../../assets/images/e_Comm.png';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    backgroundColor: '#ffffff',
     backgroundImage: `url(${ECommPng})`,
     backgroundPosition: 'center left 50px',
     backgroundSize: '30%',

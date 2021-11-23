@@ -32,16 +32,6 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "flex-end",
     alignItems: "center",
-    '&:after': {
-      content: '""',
-      backgroundImage: 'linear-gradient(to bottom, rgb(64 189 237 / 0%), rgb(64 189 237 / 50%))',
-      height: '30px',
-      position: 'absolute',
-      left: 0,
-      right: 0,
-      bottom: 0,
-      zIndex: 0
-    }
   },
   circle: {
     position: "relative",
@@ -112,10 +102,6 @@ export const HeroShot = () => {
   }
 
   useEffect(() => {
-    let renderCircle = localStorage.getItem("circleLoaded");
-    if(firstSvgEnd && secondSvgEnd && thirdSvgEnd){
-      localStorage.setItem("circleLoaded", "true");
-    }
 
     switch (element) {
       case "id1":
@@ -142,11 +128,7 @@ export const HeroShot = () => {
         setToolTip("");
     }
 
-    if(renderCircle === "true"){
-      setFirstSvgEnd(true);
-      setSecondSvgEnd(true);
-      setThirdSvgEnd(true);
-    }
+     
   }, [element]);
 
   return (
@@ -159,8 +141,6 @@ export const HeroShot = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            position: 'relative',
-            zIndex: 2,
             width: "50vw",
             height: "100vh",
             bgcolor: "rgba(0,0,0,0.8)",
