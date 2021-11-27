@@ -3,7 +3,6 @@ import {makeStyles} from "@material-ui/core/styles";
 import {Typography, Grid, Button} from "@material-ui/core";
 import {Link} from 'react-router-dom';
 import { SectionTitle, SectionBackground } from './../../common';
-import AboutImg from "./../../../assets/images/about_us.png";
 import DemoImage from "./../../../assets/images/ImageInBg.PNG";
 import Polygon from "./../../../assets/images/polygon.png";
 
@@ -96,7 +95,7 @@ export const IntroApp = () => {
               content into a smart one so that this digital information can be
               monetized and utilized freely.
             </Typography>
-            <Typography gutterBottom={true}>
+            {/* <Typography gutterBottom={true}>
               We’re based in Noida, our primary motto is to serve our
               publishing, IT, and manpower services to small and large
               businesses. As Pathway is one of the
@@ -111,7 +110,7 @@ export const IntroApp = () => {
               India’s one of the leading publishing and IT services companies
               available 24/7/365. At our company, we encourage you to push your
               limits and skyrocket your brand with our services.
-            </Typography>
+            </Typography> */}
             <Grid align="center">
               <Link to="/about" className={classes.link}>
                   <Button color="primary" variant="contained">Know more...</Button>

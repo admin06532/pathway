@@ -13,7 +13,7 @@ import {Link} from "react-router-dom";
 const useStyles = makeStyles({
   root: {
     width: '100%',
-    minHeight: 360,
+    minHeight: 410,
     boxSizing: "border-box",
     boxShadow: "0 0 20px 0 rgb(64 189 237 / 50%)",
     "&:hover": {
@@ -39,6 +39,7 @@ export const CustomCard = ({
   avatarLabel = "",
   boxHeading = "",
   boxPara = [],
+  boxList = [],
   boxUrl = "/",
   boxButtonlabel = "",
 }) => {
@@ -52,7 +53,7 @@ export const CustomCard = ({
         <Typography variant='h6' component='h6'>
           {boxHeading}
         </Typography>
-        {boxPara.map((value, index) => {
+        {boxPara.length > 0 && boxPara.map((value, index) => {
           return (
             <Typography
               key={`para${index}`}
@@ -63,7 +64,29 @@ export const CustomCard = ({
               {value}
             </Typography>
           );
-        })}
+        })};
+        <List>
+          {boxList.map((value, index) => {
+                return (
+                  <ListItem 
+                    key={`list${index}`}
+                    className={classes.pos}
+                    color='textSecondary'
+                  >
+                    <ListItemIcon>
+                      <InboxIcon />
+                    </ListItemIcon>
+                    <ListItemText primary={value} />
+                    </ListItem>
+                  );
+              })
+            }
+        </List>
+         
+
+        
+      
+      
         <Grid align='center'>
           <Link to={boxUrl} className={classes.link}>
             <Button color='primary' variant='contained' fullWidth>

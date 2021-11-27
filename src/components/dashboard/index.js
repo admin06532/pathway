@@ -10,4 +10,8 @@ export {IntroApi} from './intoApi/IntroApi';
 export {IntroCms} from './introCms/introCms';
 export {OtherServices} from './boxOther/otherServices';
 export {Striper} from './striper/Striper';
+export {Publish} from './publish/Publish';
+export {ItConsulting} from './consulting/ItConsulting';
+
+
 
