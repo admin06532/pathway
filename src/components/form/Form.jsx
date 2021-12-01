@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
 import {ThemeProvider, makeStyles, createTheme} from "@material-ui/core/styles";
-import {Grid, TextField, Button, Snackbar, Typography} from "@material-ui/core";
+import {Grid, CircularProgress, Backdrop, TextField, Button, Snackbar, Typography} from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
 import {green, deepOrange} from "@material-ui/core/colors";
 import clsx from "clsx";
 import ContactUs from "./../../assets/images/contactUs.jpg";
-import {SectionBackground, SectionTitle} from "./../common";
+import {SectionBackground, SectionTitle } from "./../common";
 import {BASE_API} from "./../../constant";
 
 const useStyles = makeStyles((theme) => ({
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
   rootContainer: {
     position: "relative",
-    background: '#f3f4fd'
+    background: '#ffffff'
   },
 
   root: {
@@ -36,6 +36,10 @@ const useStyles = makeStyles((theme) => ({
   cta: {
     padding: "10px",
   },
+  backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    color: '#fff',
+  }
 }));
 
 const theme = createTheme({
@@ -60,6 +64,12 @@ export const Form = () => {
   const [userInput, setUserInput] = useState(userDefaultValue);
   const [validation, setValidation] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
+  const [openBackdrop, setOpenBackdrop] = useState(false);
+  
+  const handleToggle = () => {
+    setOpenBackdrop(!openBackdrop);
+  };
+
 
   const handleUser = (e) => {
     let {name, value} = e.currentTarget;
@@ -76,6 +86,8 @@ export const Form = () => {
   };
 
   const submitUserQuery = () => {
+    setOpenBackdrop(true);
+
     const payLoadData = {
       contactUserName: `${userInput.firstName} ${userInput.lastName}`,
       contactUserEmail: `${userInput.email}`,
@@ -95,6 +107,7 @@ export const Form = () => {
         );
         setOpenSnackbar(true);
         setUserInput(userDefaultValue);
+        setOpenBackdrop(false);
         return response.json();
       })
       .catch((error) => {
@@ -115,16 +128,19 @@ export const Form = () => {
     } else {
       setValidation(true);
     }
-  }, [userInput, openSnackbar, successMessage]);
+  }, [userInput, openSnackbar, successMessage, openBackdrop]);
 
   return (
     <Grid container className={classes.rootContainer}>
+      <Backdrop className={classes.backdrop} open={openBackdrop} onClick={handleToggle}>
+        <CircularProgress color="inherit" />
+      </Backdrop>
       <SectionBackground imagePath={ContactUs} align='right' />
       <section className='container'>
         <Grid container style={{paddingTop: 40}}>
           <Grid item md={6} xs={12}>
             <SectionTitle>Contact Us</SectionTitle>
-            <Typography variant='body1'>
+            <Typography variant='body2'>
               We’re based in Noida; our primary motto is to serve our
               publishing, IT, and manpower services to small and large
               businesses. As Pathways is one of the leading names in the Noida
@@ -132,7 +148,7 @@ export const Form = () => {
               multinational companies across the country.{" "}
             </Typography>
 
-            <Typography variant='body1'>
+            <Typography variant='body2'>
               By partnering with Pathways, we’re always ready to maintain your
               peace of mind by delivering the best possible services. Pathways
               is India’s one of the leading publishing and IT services companies
@@ -215,8 +231,6 @@ export const Form = () => {
                 <Grid
                   item
                   xs={12}
-                  alignItems='bottom'
-                  justifyContent='flex-end'
                   className={classes.cta}
                 >
                   <Button

@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import {  useMediaQuery, Grid, Typography } from '@material-ui/core';
-import DemoImage from "./../../../assets/images/ImageInBg.PNG";
+import DemoImage from "./../../../assets/images/3.png";
 import Polygon from "./../../../assets/images/polygon.png";
 import { CustomCard, SectionTitle, SectionBackground } from './../../common';
 
@@ -52,10 +52,10 @@ export const ItConsulting = () => {
                 IT Consulting 
             </SectionTitle>
 
-            <Typography variant="body1">
+            <Typography variant="body2">
                 DPathway offers contract-to-hire personnel for project-based support, with the opportunity to hire our contractors as permanent employees or discover permanent top talent to match your company's requirements. We have obtained a unique perspective on how we may contribute to organizational goals by listening to our client's business requirements.
             </Typography>
-            <Typography variant="body1">
+            <Typography variant="body2">
                 Our professional consultants are local market experts who work with you to understand your business objectives and specific personnel requirements. They use the most up-to-date technologies to find the greatest talent, and they put their people skills to good use to make sure the best talent finds its way to you. This is how we help you move your company forward so you can gain a competitive edge.
             </Typography>
         </Grid>

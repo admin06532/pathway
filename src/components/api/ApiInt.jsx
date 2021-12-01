@@ -2,7 +2,6 @@ import React from "react";
 import { Grid, List, ListItem, Typography } from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import AboutImage from "./../../assets/images/heroshot/banner_2-min.png";
-import { GridOn } from "@material-ui/icons";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -62,7 +61,7 @@ export const ApiDev = () => {
             <Typography variant="h5">
                 Our Custom API Services
             </Typography>
-            <Typography variant="body1">
+            <Typography variant="body2">
                 We offer end-to-end support for API integration. Our experts are poised with years of experience and skills to render the most satisfactory service. Find our custom APIs integration service in the following section.
             </Typography>
 
@@ -78,7 +77,7 @@ export const ApiDev = () => {
             <Typography variant="h5">
                 Benefits of Choosing Us
             </Typography>
-            <Typography variant="body1">
+            <Typography variant="body2">
                 Choosing D-pathway for API development and integration service is beneficial for many reasons. Our team is poised with experience and skills to render high-quality service. Most importantly, we have a team of dedicated and professional personnel. Thus, choosing us will give you the following benefits.
             </Typography>
             <List>
@@ -93,7 +92,7 @@ export const ApiDev = () => {
                 Our Expertise
             </Typography>
             
-            <Typography variant="body1">
+            <Typography variant="body2">
                 We offer API integration service for different industries. Bagging years of experience, we possess expertise in the following services.
             </Typography>
             <List>
@@ -102,7 +101,7 @@ export const ApiDev = () => {
                 <ListItem>API Platforms: We are poised with skills to work on different API platforms such as Google, Windows, Twitter, Facebook, Amazon, and many more.</ListItem>
                 <ListItem>Partner API: Obtain licenses easily with us for using the top-quality partner APIs for your business.</ListItem>
             </List>
-            <Typography variant="body1">For more information on our API development and integration service, we request you to call us anytime. Alternatively, you can write an email to us. We will reach will at the earliest.</Typography>
+            <Typography variant="body2">For more information on our API development and integration service, we request you to call us anytime. Alternatively, you can write an email to us. We will reach will at the earliest.</Typography>
             </Grid>
           </Grid>
         )

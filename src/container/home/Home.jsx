@@ -3,9 +3,6 @@ import {
   HeroShot,
   SoftwareConsultancy,
   IntroApp,
-  IntroEcom,
-  IntroApi,
-  IntroCms,
   Striper,
   Publish,
   ItConsulting

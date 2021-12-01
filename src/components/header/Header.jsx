@@ -342,7 +342,7 @@ function openNewUrl(path, blank){
                         onClick={handleClose} 
                         to="/enterprise/RPO"
                         component={Link}
-                      >RPO</MenuItem>
+                      >Recruitment Process Outsourcing</MenuItem>
                       <MenuItem 
                         onClick={handleClose}
                         to="/details/tech"

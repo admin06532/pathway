@@ -61,7 +61,7 @@ export const CustomerMgmt = () => {
             <Typography variant="h5">
             Our Ecommerce Development Services
             </Typography>
-            <Typography variant="body1">
+            <Typography variant="body2">
             At Dpathway, we offer an extensive range of ecommerce website development service. Find a glimpse on our ecommerce development service below.
             </Typography>
             <List>
@@ -75,7 +75,7 @@ export const CustomerMgmt = () => {
             <Typography variant="h5">
                 Why Choose Us?
             </Typography>
-                <Typography variant="body1">
+                <Typography variant="body2">
                 So, why should you choose Dpathway for ecommerce development service? Find the reasons for choosing our advanced and seamless ecommerce development service.
                   </Typography>
                 
@@ -92,9 +92,9 @@ export const CustomerMgmt = () => {
             <Typography variant="h5">
                 An Affordable Service Provider
             </Typography>
-            <Typography variant="body1" gutterBottom={true}>
+            <Typography variant="body2" gutterBottom={true}>
             At Dpathway, we maintain transparency in our service packages. Our goal is providing top-quality ecommerce website development solution at the most affordable budget. Moreover, satisfaction of the clients is a crucial concern for us. We offer custom ecommerce development service at your suitable budget.</Typography>
-            <Typography variant="body1" gutterBottom={true}>
+            <Typography variant="body2" gutterBottom={true}>
 For an advanced ecommerce development service, you can contact us anytime. Call us or write emails to us to get in touch with our team.
             </Typography>
             </Grid>

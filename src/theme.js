@@ -33,8 +33,10 @@ export const theme = createTheme({
         fontFamily: 'inherit',
         fontSize: '20px'
       },
-      body1: {
-        paddingBottom: '40px'
+      body2: {
+        paddingBottom: '40px',
+        color: '#333',
+        fontSize: '16px',
       },
       overrides: {
         MuiCssBaseline: {
@@ -43,7 +45,7 @@ export const theme = createTheme({
           },
         }
       }
-     }
+     },
   });
   
 theme.props = {
@@ -90,6 +92,9 @@ theme.props = {
           color: '#fff',
           textDecoration: 'none',
         },
+        '&:disabled': {
+          border: 'none'
+        }
       },
     },
   };

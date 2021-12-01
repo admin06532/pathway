@@ -3,10 +3,15 @@ import {
   Grid,
   Card,
   CardContent,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
   Avatar,
   Typography,
   Button,
 } from "@material-ui/core";
+import InboxIcon from '@material-ui/icons/Inbox';
 import {makeStyles} from "@material-ui/core/styles";
 import {Link} from "react-router-dom";
 
@@ -64,19 +69,16 @@ export const CustomCard = ({
               {value}
             </Typography>
           );
-        })};
+        })}
         <List>
           {boxList.map((value, index) => {
                 return (
                   <ListItem 
                     key={`list${index}`}
-                    className={classes.pos}
+                    disableGutters={true}
                     color='textSecondary'
                   >
-                    <ListItemIcon>
-                      <InboxIcon />
-                    </ListItemIcon>
-                    <ListItemText primary={value} />
+                   {value}
                     </ListItem>
                   );
               })

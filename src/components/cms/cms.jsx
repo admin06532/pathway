@@ -61,7 +61,7 @@ export const CMS = () => {
             <Typography variant="h5">
             What Do We Offer?
             </Typography>
-            <Typography variant="body1">
+            <Typography variant="body2">
             Dpathway offers end-to-end support for website development using a robust and advanced content management system (CMS). If you want an experienced website development company to render web development services on your preferred CMS platform, Dpathway is the place for you. At Dpathway, you will find the following CMS services.
             </Typography>
 
@@ -76,7 +76,7 @@ export const CMS = () => {
                 <Typography variant="h5">
                 Why Choose Us?
                 </Typography>
-                <Typography variant="body1">
+                <Typography variant="body2">
                 Dpathway is a company driven by ethical business values. We focus on delivering the most satisfactory services at the most affordable budget.
 Our team is enthusiastic about dealing with different ranges of website development services on various CMS platforms. We love challenging projects and meet the expectations of clients with perfection.
                   </Typography>
@@ -91,7 +91,7 @@ Our team is enthusiastic about dealing with different ranges of website developm
                 </ListItem>
             </List>
 
-            <Typography variant="body1">
+            <Typography variant="body2">
             Dpathway has expertise in working with different CMS platforms. Call us or write an email to us to know more about our services.
             </Typography>
             </Grid>
