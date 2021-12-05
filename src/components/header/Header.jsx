@@ -191,7 +191,7 @@ function openNewUrl(path, blank){
             {isMobile ? (
                 <>
                   <IconButton
-                    color="textPrimary"
+                    color="primary"
                     className={classes.menuButton}
                     edge="start"
                     aria-label="menu"
@@ -266,7 +266,7 @@ function openNewUrl(path, blank){
                     component={Link}
                     to="/"
                     color="default"
-                    activeclassname={openId === 'simpleMenu' && 'active'}
+                    activeclassname={ (openId === 'simpleMenu' && 'active').toString()}
                     className={
                         clsx(classes.buttonBase, classes.hoverIn)
                         }
@@ -325,7 +325,7 @@ function openNewUrl(path, blank){
                     onMouseOver={handleClick}
                     id="simpleMenu1"
                     aria-haspopup="false"
-                    activeclassname={openId === 'simpleMenu1' && 'active'}
+                    activeclassname={ (openId === 'simpleMenu1' && 'active').toString()}
                   >
                     ENTERPRISE
                   </Button>

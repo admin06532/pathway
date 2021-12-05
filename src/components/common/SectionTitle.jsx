@@ -2,10 +2,17 @@ import React from "react";
 import {Typography} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 
-const useStyle = makeStyles(() => ({
+const useStyle = makeStyles((theme) => ({
   root: {
     lineHeight: "1.3",
     color: "#242424",
+    [theme.breakpoints.down('md')]: {
+      color: "#333333",
+      fontSize: "1.8rem",
+      padding: "10px 0",
+      margin: "0",
+      textAlign: "center",
+    },
     fontSize: "3rem",
     padding: "10px 0 20px",
     margin: "0 0 20px auto",
@@ -13,6 +20,9 @@ const useStyle = makeStyles(() => ({
     fontWeight: "400",
     "&::after": {
       content: '""',
+      [theme.breakpoints.down('md')]: {
+        content: 'none',
+      },
       display: "block",
       background: "linear-gradient(to left,#fff,#40BDED)",
       position: "absolute",

@@ -8,6 +8,7 @@ import { CMS } from './components/cms/cms';
 
 import { NotFound } from './components/404';
 import { AboutUs } from './container/aboutUs/aboutUs';
+import { Technology } from './container/technologies';
 import ScrollToTop from './components/scrollTop/ScrolToTop'
 import {ApiDev} from './components/api/ApiInt';
 import { Footer } from './components/footer';
@@ -55,6 +56,12 @@ const App = () => {
           <Route path="/usstaff">
             <UsStaff />
           </Route>
+          <Route path="/tech">
+            <Technology />
+          </Route>
+
+          
+
           <Route>
               <NotFound />
           </Route>

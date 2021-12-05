@@ -64,7 +64,7 @@ export const SoftwareConsultancy = () => {
                 avatarLabel="AD"
                 boxHeading="AI Development "
                 boxPara={['By applying AI to your products, business operations, new domains, developing tools, and more, we help your company create amazing customer experiences and become smarter.']}
-                boxUrl="/placement"
+                boxUrl="/tech"
                 boxButtonlabel="Know More..."
               />
             </Grid>
@@ -73,7 +73,7 @@ export const SoftwareConsultancy = () => {
                 avatarLabel="WD"
                 boxHeading="Web Development"
                 boxPara={['Our web developers assist brands in navigating the ever-changing digital landscape by being client-focused, customer-centric, and designing website solutions that produce concrete business results.']}
-                boxUrl="/placement"
+                boxUrl="/tech"
                 boxButtonlabel="Know More..."
               />
             </Grid>
@@ -82,7 +82,7 @@ export const SoftwareConsultancy = () => {
                 avatarLabel="AD"
                 boxHeading="App Development "
                 boxPara={['We can assist you in developing consumer-facing or business-to-business apps for a variety of digital platforms, including mobile, online, desktop, smartwatch, VR, and AR.']}
-                boxUrl="/placement"
+                boxUrl="/tech"
                 boxButtonlabel="Know More..."
               />
             </Grid>
@@ -91,7 +91,7 @@ export const SoftwareConsultancy = () => {
                 avatarLabel="SS"
                 boxHeading="SEO Services"
                 boxPara={['Our staff is dedicated to providing the most efficient and lucrative internet marketing methods to help your organization achieve revenue-generating goals.']}
-                boxUrl="/usstaff"
+                boxUrl="/tech"
                 boxButtonlabel="Know More..."
               />
             </Grid>

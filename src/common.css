@@ -1,20 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 
 body {
   overflow-x: hidden;
 }
 .container {
-  max-width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
   position: relative;
   margin: 0 auto;
 }
-
 p {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 a {
   text-decoration: none;
 }
+@media screen (min-width: 1170px){
+  .container {
+    max-width: 1200px;
+  }
+}; 

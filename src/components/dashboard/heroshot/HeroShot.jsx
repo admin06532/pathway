@@ -32,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "flex-end",
     alignItems: "center",
+    [theme.breakpoints.down('md')]: {
+      display: 'none',
+    },
   },
   circle: {
     position: "relative",

@@ -5,19 +5,19 @@ import {
   CardContent,
   List,
   ListItem,
-  ListItemIcon,
-  ListItemText,
   Avatar,
   Typography,
   Button,
 } from "@material-ui/core";
-import InboxIcon from '@material-ui/icons/Inbox';
 import {makeStyles} from "@material-ui/core/styles";
 import {Link} from "react-router-dom";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
+    [theme.breakpoints.down('md')]: {
+      minHeight: 'auto',
+    },
     minHeight: 410,
     boxSizing: "border-box",
     boxShadow: "0 0 20px 0 rgb(64 189 237 / 50%)",
@@ -34,11 +34,23 @@ const useStyles = makeStyles({
     boxShadow: "0 5px 15px 0 rgb(0 0 0 / 15%)",
     height: "70px",
     marginBottom: "10px",
+    [theme.breakpoints.down('md')]: {
+      borderRadius: '0',
+      marginTop: 10,
+      marginBottom: 10,
+      margin: "0 auto"
+    },
   },
   link: {
     textDecoration: "none",
   },
-});
+  header: {
+    [theme.breakpoints.down('md')]: {
+      textAlign: "center",
+      paddingBottom: '10px',
+    },
+  }
+}));
 
 export const CustomCard = ({
   avatarLabel = "",
@@ -55,7 +67,7 @@ export const CustomCard = ({
         {avatarLabel && (
           <Avatar className={classes.avatar}>{avatarLabel}</Avatar>
         )}
-        <Typography variant='h6' component='h6'>
+        <Typography variant='h6' className={classes.header} component='h6'>
           {boxHeading}
         </Typography>
         {boxPara.length > 0 && boxPara.map((value, index) => {
@@ -84,14 +96,9 @@ export const CustomCard = ({
               })
             }
         </List>
-         
-
-        
-      
-      
         <Grid align='center'>
           <Link to={boxUrl} className={classes.link}>
-            <Button color='primary' variant='contained' fullWidth>
+            <Button color='primary' className={'btn-mobile'} variant='contained' fullWidth>
               {boxButtonlabel}
             </Button>
           </Link>

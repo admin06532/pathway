@@ -24,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
     display: "block",
     flexWrap: "wrap",
     marginRight: theme.spacing(10),
+    [theme.breakpoints.down('md')]: {
+      marginRight: theme.spacing(0),
+    },
     paddingTop: theme.spacing(5),
     paddingBottom: theme.spacing(10),
   },
@@ -32,6 +35,11 @@ const useStyles = makeStyles((theme) => ({
   },
   fullwidth: {
     width: "97%",
+  },
+  fullwidthInput: {
+    [theme.breakpoints.down('md')]: {
+      width: "97%",
+    },
   },
   cta: {
     padding: "10px",
@@ -177,7 +185,7 @@ export const Form = () => {
                 <Grid item xs={12}>
                   <ThemeProvider theme={theme}>
                     <TextField
-                      className={classes.margin}
+                      className={clsx(classes.fullwidthInput, classes.margin)}
                       label='First Name'
                       variant='outlined'
                       name='firstName'
@@ -187,7 +195,7 @@ export const Form = () => {
                       placeholder={requiredLabel}
                     />
                     <TextField
-                      className={classes.margin}
+                      className={clsx(classes.fullwidthInput, classes.margin)}
                       label='Last Name'
                       variant='outlined'
                       id='lastName'

@@ -2,8 +2,11 @@ import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import clsx from "clsx";
 
-const useStyle = makeStyles(() => ({
+const useStyle = makeStyles((theme) => ({
   bannerImage: {
+    [theme.breakpoints.down('md')]: {
+      display: 'none',
+    },
     position: 'absolute',
     left: '-10%',
     borderRadius: '40px',

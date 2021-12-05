@@ -5,19 +5,22 @@ import {
   IntroApp,
   Striper,
   Publish,
-  ItConsulting
+  ItConsulting,
+  Mdash
 } from "./../../components/dashboard";
 import {Form} from "./../../components/form";
 
 export const HomeContainer = () => {
+  
   return (
     <>
+      <Mdash />
       <HeroShot />
       <Striper />
       <IntroApp />
       <ItConsulting />
       <Publish />
-      <SoftwareConsultancy />
+      <SoftwareConsultancy /> 
       <Form />
     </>
   );

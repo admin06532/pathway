@@ -55,7 +55,7 @@ export const BoxHome = () => {
                             <Typography className={classes.pos} color="textSecondary">
                                 Stellar Digital Content Publishing & Conversion Services for Your Mushrooming Business
                             </Typography>
-                            <Button color="primary" variant="contained" fullWidth>Know More...</Button>
+                            <Button color="primary" variant="contained" className="btn-mobile" fullWidth>Know More...</Button>
                     </CardContent>
                 </Card>
             </Grid>
@@ -69,7 +69,7 @@ export const BoxHome = () => {
                             <Typography className={classes.pos} color="textSecondary">
                                 Our cyber security solutions safeguard your data and IT infrastructure from both internal and external threats.
                             </Typography>
-                            <Button color="primary" variant="contained" fullWidth>Know More...</Button>
+                            <Button color="primary" className="btn-mobile" variant="contained" fullWidth>Know More...</Button>
                     </CardContent>
                 </Card>
             </Grid>

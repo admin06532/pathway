@@ -3,6 +3,7 @@ import { createTheme, responsiveFontSizes, ThemeProvider } from '@material-ui/co
 import { makeStyles } from "@material-ui/core/styles";
 import UnderConstruction from './../../assets/images/underConstruction.jpg'
 import { Button, Grid } from '@material-ui/core';
+import clsx from 'clsx';
 
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
@@ -49,7 +50,7 @@ export const NotFound = () => {
       <ThemeProvider theme={theme} style={{position: 'relative'}} >
         <img src={UnderConstruction} className={classes.image} alt="under construction" />
         <Grid align="center" className={classes.fixedCenter}>
-            <Button className={classes.btnStrach} onClick={home}>Back to home </Button>
+            <Button className={clsx(classes.btnStrach, 'btn-mobile')} onClick={home}>Back to home </Button>
           </Grid>
       </ThemeProvider>
     </div>

@@ -34,7 +34,7 @@ export const theme = createTheme({
         fontSize: '20px'
       },
       body2: {
-        paddingBottom: '40px',
+        paddingBottom: '20px',
         color: '#333',
         fontSize: '16px',
       },
@@ -77,6 +77,10 @@ theme.props = {
             backgroundColor: '#3FBDED',
             color: '#fff',
             textDecoration: 'none',
+        },
+        [theme.breakpoints.down('md')]: {
+          backgroundColor: '#3FBDED',
+          color: '#fff',
         },
       }, 
       containedSecondary: {

@@ -26,29 +26,6 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   
-  bannerImage: {
-    position: 'absolute',
-    right: '-5%',
-    borderRadius: '40px',
-    width: '40%',
-    textAlign: 'center',
-    padding: 0,
-    top: '15%',
-    zIndex: 2,    
-    '&::before': {
-      content: '""',
-      display: "block",
-      position: "absolute",
-      borderRadius: "40px",
-      zIndex: 0,
-      top: '-20px',
-      left: 0,
-      height: "100%",
-      width: "110%",
-      background: "linear-gradient( 45deg,#3FBDED 0%,#00A4E8 100%)",
-      transform: "rotate(10deg)",
-    },
-  },
   img: {
     height: "100%",
     margin: "auto",
@@ -56,6 +33,15 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "5px 5px 36px rgb(64 189 237 / 50%)",
     backgroundColor: '#ffffff',
     position: 'relative'
+  },
+  gridItem : {
+    [theme.breakpoints.down('md')]: {
+      marginLeft: 0,
+      marginTop: 10,
+    },
+    marginLeft: 50,
+    marginTop: 50,
+    textAlign: "left"
   }
 
 }));
@@ -72,7 +58,7 @@ export const IntroApp = () => {
         item
         xs={12}
         md={6}
-        style={{marginLeft: 50, marginTop: 50, textAlign: "left"}}
+        className={classes.gridItem}
       >
         <SectionTitle>Introduction</SectionTitle>
         <Grid container>

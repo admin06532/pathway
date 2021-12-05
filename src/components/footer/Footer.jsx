@@ -32,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 0,
     marginTop: '20px',
     backgroundImage: `url(${Logo})`,
+    [theme.breakpoints.down('md')]: {
+      backgroundPosition: "center 56%",
+    },
     backgroundPosition: 'center left 50px',
     backgroundRepeat: 'no-repeat'
   },
@@ -51,7 +54,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex'
   },
   listItem: {
-    fontSize: '13px', 
+    fontSize: '13px',
+    paddingBottom: '12px', 
     color: '#6a767b',
     '&:hover' : {
       cursor: 'pointer',
@@ -60,7 +64,10 @@ const useStyles = makeStyles((theme) => ({
   copy: {
     color: '#666666',
     padding: '30px 0 0',
-    fontSize: '12px'
+    fontSize: '12px',
+    [theme.breakpoints.down('md')]: {
+      paddingTop: "65px",
+    }
   },
   link: {
       color: '#666666',
@@ -84,10 +91,39 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: '#fff',
     fontWeight: '500',
-    padding: '20px 0'
+    padding: '20px 0',
+    [theme.breakpoints.down('md')]: {
+      padding: '5px 0',
+    }
+  },
+  column: {
+    [theme.breakpoints.down('md')]: {
+      paddingLeft: 15,
+      paddingRight: 15,
+      flexDirection: 'column',
+    },
   }
 }));
  
+
+const items = [
+  "Permanent Placement Recruitment (PPR)",
+  "US Staffing",
+  "Contract Permanent Recruitment ",
+  "Heading-Outsourcing",
+  "AI Development",
+  "Web Development",
+  "Web Development",
+  "SEO Services",
+  "App Maker",
+  "Android App",
+  "Maker iPhone", 
+  "About Us",
+  "Blog",
+  "Cyber Security",
+  "Digital Learning",
+  "e-Publishing"
+]
 
 
 export const Footer = () => {
@@ -102,63 +138,19 @@ export const Footer = () => {
       <div className={classes.banner} >
           <Button onClick={goToTop} color="inherit">Back to top</Button>
       </div>
-      <Grid container className={classes.mxWidth}>
-        <Grid item md={3}>
-          <Typography variant="h6" className={classes.header}>
-              Products
-          </Typography>
-          <List>
-            <ListItem className={classes.listItem} disableGutters>App Builder</ListItem>
-            <ListItem className={classes.listItem} disableGutters>Website Builder</ListItem>
-            <ListItem className={classes.listItem} disableGutters>Chatbot Builder</ListItem>
-            <ListItem className={classes.listItem} disableGutters>Design</ListItem>
-            <ListItem className={classes.listItem} disableGutters>Connect</ListItem>
-          </List>
-        </Grid>
-        <Grid item md={3}>
-          <Typography variant="h6" className={classes.header}>
-              Programs
-          </Typography>
-          <List>
-            <ListItem className={classes.listItem} disableGutters>App Builder Reseller</ListItem>
-            <ListItem className={classes.listItem} disableGutters>University Program</ListItem>
-            <ListItem className={classes.listItem} disableGutters>Student Developer Course</ListItem>
-            <ListItem className={classes.listItem} disableGutters>No-Code Developer Course</ListItem>
-            <ListItem className={classes.listItem} disableGutters>Become an Affiliate</ListItem>
-          </List>
-        </Grid>
-        <Grid item md={3}>
-          <Typography variant="h6" className={classes.header}>
-            Research
-          </Typography>
-          <List>
-            <ListItem className={classes.listItem} disableGutters>About Us</ListItem>
-            <ListItem className={classes.listItem} disableGutters>Pricing Plans</ListItem>
-            <ListItem className={classes.listItem} disableGutters>Tutorials &amp; FAQs</ListItem>
-            <ListItem className={classes.listItem} disableGutters>Blog</ListItem>
-            <ListItem className={classes.listItem} disableGutters>Security</ListItem>
-          </List>
-        </Grid>
-        <Grid item md={3}>
-          <Typography variant="h6" className={classes.header}>
-             Resources
-          </Typography>
-          <List>
-            <ListItem className={classes.listItem} disableGutters>App Maker</ListItem>
-            <ListItem className={classes.listItem} disableGutters>Android App Maker</ListItem>
-            <ListItem className={classes.listItem} disableGutters>iPhone App Maker</ListItem>
-            <ListItem className={classes.listItem} disableGutters>Convert Website to App</ListItem>
-            <ListItem className={classes.listItem} disableGutters>How to Create an App</ListItem>
-          </List>
-        </Grid>
+      <Grid container className={clsx(classes.mxWidth, classes.column) }>
+        {
+         items.map( (v, i) => {
+          return <Grid item md={3} key={`ind${i}`} className={classes.listItem}>{v}</Grid>
+         })   
+        }
       </Grid>
-        
         <Grid item xs={12} >
-          <Paper className={classes.paper} color="invert">
+          <Paper className={classes.paper} color="invert" elevation={0} >
             <div className={  clsx(classes.main, classes.mxWidth) }>
               <Link href="https://www.facebook.com/Digital-Pathway-Pvt-Ltd-111697710588591" className={classes.link} target="_blank" rel="noopener"> Facebook</Link>
               <Link href="https://www.linkedin.com/company/digital-pathway" className={classes.link} target="_blank" rel="noopener">LinkedIn</Link>
-              <Link href="https://twitter.com/DigitalPathway2"  className={classes.link} target="_blank" rel="noopener"> Tweeter </Link>
+              <Link href="https://twitter.com/DigitalPathway2"  className={classes.link} target="_blank" rel="noopener"> Twitter </Link>
               <Link href="https://www.instagram.com/digital_pathway/" className={classes.link} target="_blank" rel="noopener">Instagram</Link>
               <Link href="https://www.youtube.com/channel/UC3G6RmCAFXT8E-vOH1CgQQw/featured" className={classes.link} target="_blank" rel="noopener">Youtube</Link>
               <Link href="https://goo.gl/maps/8nDiCuVv26D2jjfNA" className={classes.link} target="_blank" rel="noopener" >Way to reach</Link>

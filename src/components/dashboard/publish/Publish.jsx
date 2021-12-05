@@ -16,6 +16,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "32%",
     backgroundRepeat: "no-repeat",
     paddingBottom: "50px",
+    [theme.breakpoints.down('md')]: {
+      paddingTop: 50
+    },
   },
   paper: {
     height: 140,
@@ -62,6 +65,16 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     zIndex: 5
   },
+  flexItem : {
+    marginLeft: 50,
+    marginTop: 50,
+    textAlign: "left",
+    [theme.breakpoints.down('md')]: {
+      marginLeft: 0,
+      marginTop: 0,
+      paddingTop: 20
+    },
+  }
 }));
 
 export const Publish = () => {
@@ -75,7 +88,6 @@ export const Publish = () => {
           item
           xs={12}
           md={6}
-          style={{marginLeft: 50, marginTop: 50, textAlign: "left"}}
         >
           <SectionTitle> Publishing &amp; Conversion</SectionTitle>
           <Grid container>
