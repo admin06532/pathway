@@ -1,9 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
-    List,
     Paper,
-    ListItem,
     Grid,
     Typography,
     Link,

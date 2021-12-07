@@ -21,8 +21,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function(){
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
-
+  
   return (
     <Grid container className={classes.root}>
       <Accordion>

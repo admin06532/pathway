@@ -1,6 +1,6 @@
 import React from 'react';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import {  useMediaQuery, Grid, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import {  Grid, Typography } from '@material-ui/core';
 import DemoImage from "./../../../assets/images/Technology.png";
 import Polygon from "./../../../assets/images/polygon.png";
 import { CustomCard, SectionTitle, SectionBackground } from './../../common';
@@ -38,8 +38,6 @@ const useStyles = makeStyles({
 
 export default function(){
   const classes = useStyles();
-  const theme = useTheme();
-  const isMobile = useMediaQuery(useTheme().breakpoints.down("sm"));
 
   return (
       <Grid container className={classes.containerWrapper}>
