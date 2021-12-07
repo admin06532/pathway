@@ -1,18 +1,13 @@
 export {BoxHome} from './box/BoxHome';
-export {HeroShot} from './heroshot/HeroShot';
 export {HomeCarousel} from './homecarousel/HomeCarousel';
-export {IntroApp} from './intro/Intro';
 export {IntroEcom} from './introEcom/introEcom';
 export {OurClient} from './ourClient/OurClient';
-export {SoftwareConsultancy} from './softwareConsultancy/SoftwareConsultancy';
 export {SvgCircle} from './svgCircle/SvgCircle';
 export {IntroApi} from './intoApi/IntroApi';
 export {IntroCms} from './introCms/introCms';
 export {OtherServices} from './boxOther/otherServices';
-export {Striper} from './striper/Striper';
-export {Publish} from './publish/Publish';
-export {ItConsulting} from './consulting/ItConsulting';
-export {Mdash} from './mdash/Mdash';
+
+
 
 
 

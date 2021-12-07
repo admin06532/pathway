@@ -36,7 +36,7 @@ const useStyles = makeStyles({
 });
 
 
-export const SoftwareConsultancy = () => {
+export default function(){
   const classes = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(useTheme().breakpoints.down("sm"));

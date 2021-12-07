@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {Box, Typography} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
-import HeroImage from "./../../../assets/images/heroshot/banner_2-min.png";
+import HeroImage from "./../../../assets/images/heroshot/banner_2-min.jpg";
 import {SvgCircle} from "./../svgCircle/SvgCircle";
 import Typical from "react-typical";
 import {HomeCarousel} from "./../homecarousel/HomeCarousel";
@@ -84,10 +84,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const HeroShot = () => {
+export default function(){
 
   const classes = useStyles();
-  
+
   const [firstSvgEnd, setFirstSvgEnd] = useState(false);
   const [secondSvgEnd, setSecondSvgEnd] = useState(false);
   const [thirdSvgEnd, setThirdSvgEnd] = useState(false);

@@ -1,7 +1,6 @@
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
-import {Typography, Grid, Button} from "@material-ui/core";
-import {Link} from "react-router-dom";
+import {Typography, Grid} from "@material-ui/core";
 import {CustomCard, SectionTitle, SectionBackground} from "./../../common";
 import DemoImage from "./../../../assets/images/Publishing.png";
 import Polygon from "./../../../assets/images/polygon.png";
@@ -77,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export const Publish = () => {
+export default function() {
   const classes = useStyles();
 
   return (

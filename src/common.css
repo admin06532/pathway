@@ -8,6 +8,7 @@ body {
   padding-right: 15px;
   position: relative;
   margin: 0 auto;
+  max-width: 1200px;
 }
 p {
   font-family: "Montserrat", sans-serif;
@@ -16,8 +17,8 @@ p {
 a {
   text-decoration: none;
 }
-@media screen (min-width: 1170px){
+@media screen (max-width: 840px){
   .container {
-    max-width: 1200px;
+    width: 100%;
   }
 }; 

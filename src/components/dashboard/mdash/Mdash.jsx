@@ -2,10 +2,6 @@ import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {
   Grid,
-  Card,
-  CardActions,
-  CardContent,
-  Button,
   Typography,
 } from "@material-ui/core";
 
@@ -23,7 +19,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export const Mdash = () => {
+export default function(){
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
 

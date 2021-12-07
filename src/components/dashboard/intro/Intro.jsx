@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export const IntroApp = () => {
+export default function(){
   const classes = useStyles();
 
   return (

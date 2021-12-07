@@ -15,7 +15,7 @@ const useStyle = makeStyles(() => ({
     }
 }))
 
-export const Striper = () => {
+export default function(){
     const classes = useStyle();
     return (
         <Grid className={classes.root}></Grid>
