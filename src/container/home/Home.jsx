@@ -9,7 +9,7 @@ const SoftwareConsultancy = React.lazy( () => import("./../../components/dashboa
 const IntroApp = React.lazy( () => import("./../../components/dashboard/intro/Intro"));
 const Striper = React.lazy( () => import("./../../components/dashboard/striper/Striper"));
 const Publish = React.lazy( () => import("./../../components/dashboard/publish/Publish"));
-const ItConsulting = React.lazy( () => import("./../../components/dashboard/softwareConsultancy/SoftwareConsultancy"));
+const ItConsulting = React.lazy( () => import("./../../components/dashboard/consulting/ItConsulting"));
 
 
 

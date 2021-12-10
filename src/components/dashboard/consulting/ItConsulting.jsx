@@ -15,18 +15,6 @@ const useStyles = makeStyles({
     paddingTop: 50,
     paddingBottom: 50,
   },
-  root: {
-    minHeight: 360,
-    boxSizing: 'border-box',
-    
-    boxShadow: '0 0 20px 0 rgb(64 189 237 / 50%)',
-    '&:hover': {
-        boxShadow: '0 2px 30px 0 rgb(64 189 237 / 50%)'
-    }
-  },
-  pos: {
-    marginBottom: 12,
-  },
   container: {
       paddingTop: '10px',
       boxSizing: 'border-box',
@@ -37,11 +25,9 @@ const useStyles = makeStyles({
 
 
 
-export const ItConsulting = () => {
+export default function(){
   const classes = useStyles();
-  const theme = useTheme();
-  const isMobile = useMediaQuery(useTheme().breakpoints.down("sm"));
-
+  
   return (
       <Grid container className={classes.containerWrapper}>
         <SectionBackground imagePath={DemoImage} />
