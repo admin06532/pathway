@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "32%",
     backgroundRepeat: "no-repeat",
     paddingBottom: "50px",
+    paddingTop: 50,
     [theme.breakpoints.down('md')]: {
       paddingTop: 50
     },
