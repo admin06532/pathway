@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "left",
     display: "flex",
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "end",
     height: "70vh",
     position: 'relative',
   },
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundPosition: "0 50px",
     display: "flex",
-    justifyContent: "flex-end",
+    justifyContent: "flex-start",
     alignItems: "center",
     [theme.breakpoints.down('md')]: {
       display: 'none',
@@ -41,22 +41,25 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     display: "flex",
     justifyContent: "center",
+    backgroundColor: "rgb(64 189 237 / 90%)",
     borderRadius: "50%",
     width: "160px",
+    color: '#ffffff',
     height: "160px",
     "&:hover": {
       boxShadow: "3px 13px 19px 0px rgb(50 50 50 / 52%)",
-      backgroundColor: '#e65100',
+      backgroundColor: "#00a4e8",
       color: '#ffffff',
       transform: 'scale(0.95)'
     },
   },
   typing: {
-    backgroundColor: "rgba(0,0,0,0.9)",
-    color: "cyan",
+    backgroundColor: "rgb(64 189 237 / 90%)",
+    color: "#ffffff",
     width: "calc(50vw)",
     position: "absolute",
     bottom: 0,
+    right: 0,
     textAlign: "left",
     padding: "20px",
     borderRadius: "4px",
@@ -134,39 +137,25 @@ export default function(){
      
   }, [element]);
 
+  const styleSx = {
+    display: 'flex',
+    alignItems: "center",
+    justifyContent: "center",
+    width: "50vw",
+    height: "100vh",
+    backgroundColor: "rgb(64 189 237 / 90%)",
+    color: "white",
+    borderRadius: "4px",
+    "&:hover": {
+      backgroundColor: "secondary.main",
+      opacity: [0.9, 0.8, 0.7],
+    },
+  };
+
   return (
     <Box className={classes.container}>
-      {toolTip && (
-        <Box
-          pl={6}
-          pr={6}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: "50vw",
-            height: "100vh",
-            bgcolor: "rgba(0,0,0,0.8)",
-            color: "white",
-            borderRadius: "4px",
-            "&:hover": {
-              backgroundColor: "secondary.main",
-              opacity: [0.9, 0.8, 0.7],
-            },
-          }}
-        >
-          <Typography
-            variant='subtitle1'
-            align='left'
-            gutterBottom
-            component='div'
-            className={classes.initial}
-            color='cyan'
-          >
-            {toolTip}
-          </Typography>
-        </Box>
-      )}
+      
+
       <Box className={classes.content} sx={{width: "100%", maxWidth: 700}}>
         {!thirdSvgEnd && <div className={classes.contentRestrict}></div>}
         <Box
@@ -301,6 +290,26 @@ export default function(){
           wrapper='code'
         />
       )}
+
+{toolTip && (
+        <Box
+          pl={6}
+          pr={6}
+          sx={styleSx}
+        >
+          <Typography
+            variant='subtitle1'
+            align='left'
+            gutterBottom
+            component='div'
+            className={classes.initial}
+            color='cyan'
+          >
+            {toolTip}
+          </Typography>
+        </Box>
+      )}
+
     </Box>
   );
 };

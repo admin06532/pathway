@@ -6,20 +6,20 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        padding: theme.spacing(2),
         minHeight: "50",
         position: 'absolute',
-        top: 110,
-        right: 20,
-        width: 400
+        bottom: 20,
+        left: 'calc(25vw - 200px)',
+        width: 400,
       },
       item: {
         padding: theme.spacing(1),
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: '#3FBDED',
         border: '2px inset #e65100',
-        color: '#e65100',
+        color: '#ffffff',
         borderRadius: '4px',
         boxShadow: '2px 6px 3px 2px rgba(150,150,150,0.6)',
         transition: 'color 0.25s ease-in',

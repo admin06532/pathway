@@ -59,9 +59,6 @@ const App = () => {
           <Route path="/tech">
             <Technology />
           </Route>
-
-          
-
           <Route>
               <NotFound />
           </Route>
