@@ -4,6 +4,7 @@ import {Typography, Grid} from "@material-ui/core";
 import {CustomCard, SectionTitle, SectionBackground} from "./../../common";
 import DemoImage from "./../../../assets/images/Publishing.png";
 import Polygon from "./../../../assets/images/polygon.png";
+import { CARD_CUSTOM } from "../../../constant";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -112,63 +113,18 @@ export default function() {
         </Grid>
         </Grid>
               <Grid container spacing={3} className={classes.container}>
-                <Grid item xs={12} md={3}>
-                  <CustomCard
-                    avatarLabel='ID'
-                    boxHeading='Typesetting & Pagination'
-                    boxList={[
-                      "Galley",
-                      "Pagination",
-                      "Revise/Repro",
-                      "Final Print PDF",
-                    ]}
-                    boxUrl='/'
-                    boxButtonlabel='Know More...'
-                  />
+                {CARD_CUSTOM.PUBLISHING.map( ({avatarLabel, boxHeading, boxList,boxUrl, boxButtonLabel }, index) => (
+                  <Grid item xs={12} md={3} key={`card${index}`}>
+                    <CustomCard
+                      avatarLabel={avatarLabel}
+                      boxHeading={boxHeading}
+                      boxList={boxList}
+                      boxUrl={boxUrl}
+                      boxButtonLabel={boxButtonLabel}
+                    />
                 </Grid>
-                <Grid item xs={12} md={3}>
-                  <CustomCard
-                    avatarLabel='EC'
-                    boxHeading='eBook Conversion'
-                    boxList={[
-                      "HTML5/ePub3 Interactive eBook",
-                      "UI/UX,CSS / CSS3 Development",
-                      "Enhanced eBooks / Multimedia eBooks",
-                      "Web Accessible eBook Development",
-                    ]}
-                    boxUrl='/'
-                    boxButtonlabel='Know More...'
-                  />
-                </Grid>
-                <Grid item xs={12} md={3}>
-                  <CustomCard
-                    avatarLabel='XT'
-                    boxHeading='XML Transformation '
-                    boxList={[
-                      "DTD Design Services",
-                      "XML Schema Design",
-                      "DOC to XML",
-                      "DocBook XML",
-                      "XML to HTML Transformation",
-                    ]}
-                    boxUrl='/'
-                    boxButtonlabel='Know More...'
-                  />
-                </Grid>
-                <Grid item xs={12} md={3}>
-                  <CustomCard
-                    avatarLabel='AM'
-                    boxHeading='Animation &amp; Magazines'
-                    boxList={[
-                      "Cel (Celluloid) Animation",
-                      "2D Animation",
-                      "Motion Graphics",
-                      "Stop Motion",
-                    ]}
-                    boxUrl='/usstaff'
-                    boxButtonlabel='Know More...'
-                  />
-                </Grid>
+                )) 
+                }
             </Grid>
           
       </section>

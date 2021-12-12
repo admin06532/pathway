@@ -24,14 +24,14 @@ const useStyle = makeStyles((theme) => ({
       top: '-20px',
       left: -80,
       height: "100%",
-      width: "116%",
+      width: "112%",
       background: "linear-gradient( 45deg,#3FBDED 0%,#00A4E8 100%)",
       transform: "rotate(10deg)",
     },
   },
   bannerImageRight: {
     left: 'auto',
-    right: '-10%',
+    right: '-1%',
     '&::before': {
       left: 'auto',
       right: '-15%',
@@ -47,7 +47,7 @@ const useStyle = makeStyles((theme) => ({
     position: 'relative'
   },
   imgRight: {
-    borderRadius: "80px 0px 0px 80px",
+    borderRadius: "80px",
   }
 }))
 

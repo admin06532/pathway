@@ -58,7 +58,7 @@ export const CustomCard = ({
   boxPara = [],
   boxList = [],
   boxUrl = "/",
-  boxButtonlabel = "",
+  boxButtonLabel = "",
 }) => {
   const classes = useStyles();
   return (
@@ -99,7 +99,7 @@ export const CustomCard = ({
         <Grid align='center'>
           <Link to={boxUrl} className={classes.link}>
             <Button color='primary' className={'btn-mobile'} variant='contained' fullWidth>
-              {boxButtonlabel}
+              {boxButtonLabel}
             </Button>
           </Link>
         </Grid>

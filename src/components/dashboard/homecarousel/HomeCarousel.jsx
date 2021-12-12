@@ -1,20 +1,22 @@
 import React from 'react';
-import Carousel from 'react-material-ui-carousel';
+import { Carousel } from 'react-responsive-carousel';
 import { Box, Typography } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 
 const useStyles = makeStyles((theme) => ({
     root: {
         minHeight: "50",
         position: 'absolute',
-        bottom: 20,
+        bottom: 0,
         left: 'calc(25vw - 200px)',
         width: 400,
       },
       item: {
         padding: theme.spacing(1),
         display: "flex",
+        margin: '0 10px',
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: '#3FBDED',
@@ -71,10 +73,14 @@ export const HomeCarousel = (props) =>  {
         ];
 
     return (
-        <Carousel className={classes.root}
-            stopAutoPlayOnHover={true}
-            indicators={false}
-            navButtonsAlwaysVisible={false}
+        <Carousel 
+            axis="horizontal"
+            autoPlay={true}
+            centerMode={true}
+            className={classes.root}
+            showIndicators={false}
+            showStatus={false}
+            infiniteLoop={true}
             >
             {
                 items.map( (item, i) => <Item classCss={classes.item} key={i} item={item} /> )
@@ -86,7 +92,7 @@ export const HomeCarousel = (props) =>  {
 const Item = (props) => {
     return (
         <Box className={props.classCss} sx={{ width: '100%', maxWidth: 320 }}>
-            <Typography variant="subtitle">{props.item}</Typography>
+            <Typography variant='body1'>{props.item}</Typography>
         </Box>
     )
 };

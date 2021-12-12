@@ -9,8 +9,10 @@ import {
   } from '@material-ui/core';
 import clsx from 'clsx';
 import Logo from './../../assets/images/mobile_logo.png'
+import {FOOTER} from './../../constant';
 
 const useStyles = makeStyles((theme) => ({
+
   root: {
     flexGrow: 1,
     background: '#fff',
@@ -19,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
     color: '#838383',
     fontSize: '1em'
   },
-
   mxWidth: {
     maxWidth: '1200px',
     margin: '0 auto'
@@ -39,7 +40,6 @@ const useStyles = makeStyles((theme) => ({
   main: {
     textAlign: 'center',
     paddingTop: '20px',
-    
   },
   title: {
     margin: theme.spacing(4, 0, 2),
@@ -103,66 +103,36 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
  
-
-const items = [
-  "Permanent Placement Recruitment (PPR)",
-  "US Staffing",
-  "Contract Permanent Recruitment ",
-  "Heading-Outsourcing",
-  "AI Development",
-  "Web Development",
-  "Web Development",
-  "SEO Services",
-  "App Maker",
-  "Android App",
-  "Maker iPhone", 
-  "About Us",
-  "Blog",
-  "Cyber Security",
-  "Digital Learning",
-  "e-Publishing"
-]
-
-
 export const Footer = () => {
   const classes = useStyles();
-
-  const goToTop = () => {
-    document.querySelector('html').scrollTop = 0;
-  }
-
+  
   return (
     <div className={classes.root}>
       <div className={classes.banner} >
-          <Button onClick={goToTop} color="inherit">Back to top</Button>
+          <Button onClick={() => document.querySelector('html').scrollTop = 0 } color="inherit">Back to top</Button>
       </div>
       <Grid container className={clsx(classes.mxWidth, classes.column) }>
         {
-         items.map( (v, i) => {
+         FOOTER.ITEM.map( (v, i) => {
           return <Grid item md={3} key={`ind${i}`} className={classes.listItem}>{v}</Grid>
          })   
         }
       </Grid>
-        <Grid item xs={12} >
-          <Paper className={classes.paper} color="invert" elevation={0} >
-            <div className={  clsx(classes.main, classes.mxWidth) }>
-              <Link href="https://www.facebook.com/Digital-Pathway-Pvt-Ltd-111697710588591" className={classes.link} target="_blank" rel="noopener"> Facebook</Link>
-              <Link href="https://www.linkedin.com/company/digital-pathway" className={classes.link} target="_blank" rel="noopener">LinkedIn</Link>
-              <Link href="https://twitter.com/DigitalPathway2"  className={classes.link} target="_blank" rel="noopener"> Twitter </Link>
-              <Link href="https://www.instagram.com/digital_pathway/" className={classes.link} target="_blank" rel="noopener">Instagram</Link>
-              <Link href="https://www.youtube.com/channel/UC3G6RmCAFXT8E-vOH1CgQQw/featured" className={classes.link} target="_blank" rel="noopener">Youtube</Link>
-              <Link href="https://goo.gl/maps/8nDiCuVv26D2jjfNA" className={classes.link} target="_blank" rel="noopener" >Way to reach</Link>
-            </div>
-            <Typography variant="body2" align="center" className={classes.copy} spacing={1} >
-              All designs, logos and names are properties of their respective owners. All Rights Reserved. © Copyright 2021 Digital Pathway Private Limited.
-            </Typography>
-          </Paper>
-        </Grid>
+      <Grid item xs={12} >
+        <Paper className={classes.paper} color="invert" elevation={0} >
+          <div className={  clsx(classes.main, classes.mxWidth) }>
+            <Link href={FOOTER.LINK_FACEBOOK} className={classes.link} target="_blank" rel="noopener"> Facebook</Link>
+            <Link href={FOOTER.LINK_LIKEDIN} className={classes.link} target="_blank" rel="noopener">LinkedIn</Link>
+            <Link href={FOOTER.LINK_TWITTER}  className={classes.link} target="_blank" rel="noopener"> Twitter </Link>
+            <Link href={FOOTER.LINK_INSTA} className={classes.link} target="_blank" rel="noopener">Instagram</Link>
+            <Link href={FOOTER.LINK_YOUTUBE} className={classes.link} target="_blank" rel="noopener">Youtube</Link>
+            <Link href={FOOTER.LINK_LOCATION} className={classes.link} target="_blank" rel="noopener" >Way to reach</Link>
+          </div>
+          <Typography variant="body2" align="center" className={classes.copy} spacing={1} >
+            {FOOTER.COPYRIGHT}
+          </Typography>
+        </Paper>
+      </Grid>
     </div>
   );
 }
-
-
-
-
-

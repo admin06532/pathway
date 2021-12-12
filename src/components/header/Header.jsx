@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import MenuIcon from '@material-ui/icons/Menu';
 import {
         AppBar,
@@ -7,18 +7,15 @@ import {
         Typography,
         useMediaQuery,
         Button,
-        useScrollTrigger,
         Slide,
         Menu,
         MenuItem,
         ListItemIcon,
-        Hidden,
       } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Logo from './../../assets/images/pathway-logo.png'; 
-import LogoMobile from './../../assets/images/mobile_logo.png'; 
 import clsx from 'clsx';
 import {Link} from 'react-router-dom';
+import {BrandLogo, HideOnScroll} from './../common';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -120,31 +117,19 @@ const useStyles = makeStyles((theme) => ({
       }
 }));
 
-
-
-function HideOnScroll(props) {
-    const { children } = props;
-    const trigger = useScrollTrigger();
-  
-    return (
-      <Slide appear={false} direction={"down"} in={!trigger}>
-        {children}
-      </Slide>
-    );
-  }
-
 export const Header = (props) => {
   const classes = useStyles();
-  const [anchor, setAnchor] = React.useState(null);
+
+  const [anchor, setAnchor] = useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [openId, setOpenId] = useState("");
+
   const open = Boolean(anchor);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const handleMenu = (event) => {
     setAnchor(event.currentTarget);
   };
-
-const [anchorEl, setAnchorEl] = React.useState(null);
-const [openId, setOpenId] = React.useState("");
 
 function handleClick(event) {
   if (anchorEl !== event.currentTarget) {
@@ -169,8 +154,6 @@ function openNewUrl(path, blank){
   return (
     <div className={classes.root}>
         <HideOnScroll {...props}>
-        {/* <BrowserRouter> */}
-      
         <AppBar color="inherit">
         <Toolbar className={classes.toolbar}>
             <div>
@@ -180,12 +163,7 @@ function openNewUrl(path, blank){
                     variant="body2"
                     color="inherit"
                     >
-                        <Hidden only={['xs', 'sm']}n>
-                            <img src={Logo} alt="pathways logo" />
-                        </Hidden>
-                        <Hidden only={['md', 'lg', 'xl']}>
-                            <img src={LogoMobile} alt="pathways logo" />
-                        </Hidden>
+                       <BrandLogo />   
                 </Link>
             </div>
             {isMobile ? (
@@ -404,8 +382,7 @@ function openNewUrl(path, blank){
               )}
             </Toolbar>
       </AppBar>
-</HideOnScroll>
+</HideOnScroll>  
 </div>
   );
 }
-

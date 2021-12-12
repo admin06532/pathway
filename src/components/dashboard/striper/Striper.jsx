@@ -8,7 +8,7 @@ const useStyle = makeStyles(() => ({
         backgroundImage: `url(${ClientLogo})`,
         width:'100%',
         height: '80px',
-        backgroundSize: '64%',
+        backgroundSize: '75%',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         backgroundColor: '#3FBDED'
