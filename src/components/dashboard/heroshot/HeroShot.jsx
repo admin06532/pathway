@@ -154,8 +154,6 @@ export default function(){
 
   return (
     <Box className={classes.container}>
-      
-
       <Box className={classes.content} sx={{width: "100%", maxWidth: 700}}>
         {!thirdSvgEnd && <div className={classes.contentRestrict}></div>}
         <Box
@@ -164,7 +162,7 @@ export default function(){
             padding: "10px",
             cursor:
               firstSvgEnd && secondSvgEnd && thirdSvgEnd ? "pointer" : "wait",
-                border: firstSvgEnd && '7px inset #e65100',
+                border: firstSvgEnd && '7px inset #035e81',
           }}
           marginRight='10px'
           onMouseEnter={handleBoxClick}
@@ -195,7 +193,7 @@ export default function(){
             padding: "10px",
             cursor:
               firstSvgEnd && secondSvgEnd && thirdSvgEnd ? "pointer" : "wait",
-              border: secondSvgEnd && '7px inset #e65100',
+              border: secondSvgEnd && '7px inset #035e81',
           }}
           marginRight='10px'
           onMouseEnter={handleBoxClick}
@@ -229,7 +227,7 @@ export default function(){
             padding: "10px",
             cursor:
               firstSvgEnd && secondSvgEnd && thirdSvgEnd ? "pointer" : "wait",
-              border: thirdSvgEnd && '7px inset #e65100',
+              border: thirdSvgEnd && '7px inset #035e81',
           }}
           marginRight='10px'
           onMouseEnter={handleBoxClick}

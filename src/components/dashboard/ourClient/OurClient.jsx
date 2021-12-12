@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box, Typography, Grid, IconButton } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
-import { Carousel } from '@trendyol-js/react-carousel';
-import {KeyboardArrowRight, KeyboardArrowLeft} from '@material-ui/icons';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import KeyboardArrowRightOutlinedIcon from '@material-ui/icons/KeyboardArrowRightOutlined';
 import KeyboardArrowLeftOutlinedIcon from '@material-ui/icons/ArrowBackIosOutlined';

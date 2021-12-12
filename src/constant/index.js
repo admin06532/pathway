@@ -1,7 +1,40 @@
 export const BASE_API = "https://pathwaysapi.herokuapp.com";
 
 export const HEADER = {
-    
+    HERO_CAROUSAL : [
+        "Recruitment Process Outsourcing",
+        "Application Development",
+        "Publishing & conversion",
+        "CRM Application Development",
+        "ERP School Management System",
+        "API Integration",
+        "Nodejs Development",
+        ".Net Development",
+        "Java Website Development",
+        "Python Web Application",
+        "PHP Website Development",
+        "Laravel Website Development",
+        "Hybrid App Development",
+        "React Native App Development",
+        "Android App Development",
+        "iOS App Development",
+        "Machine Learning Development",
+        "Html5 Mobile App Development",
+        "Real Estate Portal Development",
+        "Search Engine Optimization",
+        "Social Media Optimization",
+        "Digital Marketing Services",
+        "Pay Per Click",
+        "Content Marketing",
+        "Internet Marketing",
+        "Bulk SMS Services",
+        "Website Optimization & Testing",
+        "Job Web Portal Development",
+        "Tour and Travel Web Development",
+        "B2B Web Portal Development",
+        "Hotel Booking Web Development",
+        "Hospital Web Portal Development"
+        ],
 }
 
 export const FOOTER = {

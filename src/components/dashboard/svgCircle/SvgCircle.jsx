@@ -43,7 +43,7 @@ export const SvgCircle = ({id, duration, start, end, onEnd }) => {
                     <circle id={id} 
                         cx="85" cy="85" r="81"
                         fill="none"
-                        stroke="#e65100"   
+                        stroke="#035e81"   
                         strokeWidth="7"
                         strokeDasharray="521"
                     />
