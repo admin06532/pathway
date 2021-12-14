@@ -56,7 +56,7 @@ const App = () => {
           <Route path="/usstaff">
             <UsStaff />
           </Route>
-          <Route path="/tech">
+          <Route path="/technology">
             <Technology />
           </Route>
           <Route>

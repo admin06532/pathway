@@ -1,85 +1,12 @@
-import React from "react";
-import {makeStyles} from "@material-ui/core/styles";
+import React, {useContext} from "react";
 import {Typography, Grid} from "@material-ui/core";
 import {CustomCard, SectionTitle, SectionBackground} from "./../../common";
 import DemoImage from "./../../../assets/images/Publishing.png";
-import Polygon from "./../../../assets/images/polygon.png";
 import { CARD_CUSTOM } from "../../../constant";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    position: "relative",
-    flexGrow: 1,
-    backgroundImage: `url(${Polygon})`,
-    backgroundColor: "#fff",
-    backgroundPosition: "center left -10px",
-    backgroundSize: "32%",
-    backgroundRepeat: "no-repeat",
-    paddingBottom: "50px",
-    paddingTop: 50,
-    [theme.breakpoints.down('md')]: {
-      paddingTop: 50
-    },
-  },
-  paper: {
-    height: 140,
-    width: 100,
-  },
-  control: {
-    padding: theme.spacing(2),
-  },
-
-  bannerImage: {
-    position: "absolute",
-    right: "-5%",
-    borderRadius: "40px",
-    width: "40%",
-    textAlign: "center",
-    padding: 0,
-    top: "15%",
-    zIndex: 2,
-    "&::before": {
-      content: '""',
-      display: "block",
-      position: "absolute",
-      borderRadius: "40px",
-      zIndex: 0,
-      top: "-20px",
-      left: 0,
-      height: "100%",
-      width: "110%",
-      background: "linear-gradient( 45deg,#3FBDED 0%,#00A4E8 100%)",
-      transform: "rotate(10deg)",
-    },
-  },
-  img: {
-    height: "100%",
-    margin: "auto",
-    borderRadius: "80px 0px 0px 80px",
-    boxShadow: "5px 5px 36px rgb(64 189 237 / 50%)",
-    backgroundColor: "#ffffff",
-    position: "relative",
-  },
-  container: {
-    paddingTop: '10px',
-    boxSizing: 'border-box',
-    position: 'relative',
-    zIndex: 5
-  },
-  flexItem : {
-    marginLeft: 50,
-    marginTop: 50,
-    textAlign: "left",
-    [theme.breakpoints.down('md')]: {
-      marginLeft: 0,
-      marginTop: 0,
-      paddingTop: 20
-    },
-  }
-}));
+import {SectionContext} from './../../../contexts/theme'
 
 export default function() {
-  const classes = useStyles();
+  const {classes} = useContext(SectionContext);
 
   return (
     <Grid container className={classes.root}>

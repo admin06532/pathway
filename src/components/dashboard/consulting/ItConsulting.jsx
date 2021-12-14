@@ -1,31 +1,12 @@
-import React from "react";
-import {makeStyles} from "@material-ui/core/styles";
+import React, { useContext } from "react";
 import {Grid, Typography} from "@material-ui/core";
 import DemoImage from "./../../../assets/images/3.png";
-import Polygon from "./../../../assets/images/polygon.png";
 import {CustomCard, SectionTitle, SectionBackground} from "./../../common";
 import {CARD_CUSTOM} from "../../../constant";
-
-const useStyles = makeStyles({
-  containerWrapper: {
-    position: "relative",
-    backgroundColor: "#f3f4fd",
-    backgroundImage: Polygon,
-    backgroundPosition: "center right",
-    backgroundRepeat: "no-repeat",
-    paddingTop: 50,
-    paddingBottom: 50,
-  },
-  container: {
-    paddingTop: "10px",
-    boxSizing: "border-box",
-    position: "relative",
-    zIndex: 5,
-  },
-});
-
+import { SectionContext } from "../../../contexts/theme";
+ 
 export default function () {
-  const classes = useStyles();
+  const {classes} = useContext(SectionContext);
 
   return (
     <Grid container className={classes.containerWrapper}>
