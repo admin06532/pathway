@@ -9,9 +9,9 @@ const useStyles = makeStyles((theme) => ({
     root: {
         minHeight: "50",
         position: 'absolute',
-        bottom: 15,
-        left: 'calc(25vw - 200px)',
-        width: 375,
+        top: 90,
+        left: 'calc(25vw - 300px)',
+        width: 290,
       },
       item: {
         padding: theme.spacing(1),
@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: '2px 6px 3px 2px rgba(150,150,150,0.6)',
         transition: 'color 0.25s ease-in',
         fontWeight: '500',
+        letterSpacing: '1px', 
         '&:hover': {
             backgroundColor: '#069cd5',
             color: '#ffffff',
@@ -44,8 +45,9 @@ export const HomeCarousel = (props) =>  {
             showIndicators={false}
             showStatus={false}
             infiniteLoop={true}
-            centerMode={true}
             showThumbs={false}
+            showArrows ={false}
+            stopOnHover={true}  
             >
             {
                 HEADER.HERO_CAROUSAL.map( (item, i) => <Item classCss={classes.item} key={i} item={item} /> )
@@ -57,7 +59,7 @@ export const HomeCarousel = (props) =>  {
 const Item = React.memo(({classCss, item}) => {
     return (
         <Box className={classCss} sx={{ margin:'0 auto', maxWidth: 320 }}>
-            <Typography variant='body1'>{item}</Typography>
+            <Typography variant='caption'>{item}</Typography>
         </Box>
     )
 });

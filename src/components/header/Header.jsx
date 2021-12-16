@@ -7,10 +7,8 @@ import {
         Typography,
         useMediaQuery,
         Button,
-        Slide,
         Menu,
         MenuItem,
-        ListItemIcon,
       } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import clsx from 'clsx';
@@ -198,13 +196,12 @@ function openNewUrl(path, blank){
                     >
                       <Typography variant="h6">OUR SOLUTION</Typography>
                     </MenuItem>
+                    
                     <MenuItem
                       onClick={() => setAnchor(null)}
                       component={Link}
                       to="/"
                     >
-                      <ListItemIcon>
-                      </ListItemIcon>
                       <Typography variant="h6">ENTERPRISE</Typography>
                     </MenuItem>
                     <MenuItem

@@ -3,7 +3,7 @@ import {Typography, Grid} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import TechImage from "./../../assets/images/techbanner.png";
 
-import {AiLearning, WebDevelopment} from './../../components/technology';
+import {AiLearning, WebDevelopment, AppDevelop} from './../../components/technology';
 
 const useStyles = makeStyles(() => ({
   deskTopMaxWidth: {
@@ -59,6 +59,7 @@ export const Technology = () => {
       </div>
       <AiLearning />
       <WebDevelopment />
+      <AppDevelop />
     </Grid>
   );
 };

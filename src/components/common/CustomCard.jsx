@@ -57,13 +57,13 @@ export const CustomCard = ({
   boxHeading = "",
   boxPara = [],
   boxList = [],
-  boxUrl = "/",
-  boxButtonLabel = "",
+  boxUrl = undefined,
+  boxButtonLabel = undefined,
 }) => {
   const classes = useStyles();
   return (
     <Card className={classes.root}>
-      <CardContent>
+      <CardContent align="left">
         {avatarLabel && (
           <Avatar className={classes.avatar}>{avatarLabel}</Avatar>
         )}
@@ -96,13 +96,13 @@ export const CustomCard = ({
               })
             }
         </List>
-        <Grid align='center'>
+        {(boxUrl && boxButtonLabel) && (<Grid align='center'>
           <Link to={boxUrl} className={classes.link}>
             <Button color='primary' className={'btn-mobile'} variant='contained' fullWidth>
               {boxButtonLabel}
             </Button>
           </Link>
-        </Grid>
+        </Grid>)}
       </CardContent>
     </Card>
   );

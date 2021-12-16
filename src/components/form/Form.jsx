@@ -4,8 +4,8 @@ import {Grid, CircularProgress, Backdrop, TextField, Button, Snackbar, Typograph
 import MuiAlert from "@material-ui/lab/Alert";
 import {green, deepOrange} from "@material-ui/core/colors";
 import clsx from "clsx";
-import ContactUs from "./../../assets/images/contactUs.jpg";
-import {SectionBackground, SectionTitle } from "./../common";
+import ContactUs from "./../../assets/images/contact_map.png";
+import {SectionTitle } from "./../common";
 import {BASE_API} from "./../../constant";
 
 const useStyles = makeStyles((theme) => ({
@@ -17,7 +17,11 @@ const useStyles = makeStyles((theme) => ({
   },
   rootContainer: {
     position: "relative",
-    background: '#ffffff'
+    background: '#ffffff ',
+    backgroundImage: `url(${ContactUs})`,
+    backgroundPosition: 'center right',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '50%'
   },
 
   root: {
@@ -143,7 +147,7 @@ export const Form = () => {
       <Backdrop className={classes.backdrop} open={openBackdrop} onClick={handleToggle}>
         <CircularProgress color="inherit" />
       </Backdrop>
-      <SectionBackground imagePath={ContactUs} align='right' />
+       
       <section className='container'>
         <Grid container style={{paddingTop: 40}}>
           <Grid item md={6} xs={12}>

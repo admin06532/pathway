@@ -9,6 +9,8 @@ import {
 import DemoImage from "./../../assets/images/web_design.jpg";
 import Polygon from "./../../assets/images/polygon.png";
 import {CARD_CUSTOM} from "./../../constant";
+import {WebDevCarousal} from "./WebDevCarousal";
+import { WebDevList } from "./WebDevList";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -114,24 +116,32 @@ export const WebDevelopment = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid container spacing={3} className={classes.container}>
-          {CARD_CUSTOM.WEB_DEV.map(
-            (
-              {avatarLabel, boxHeading, boxPara, boxUrl, boxButtonLabel},
-              index
-            ) => (
-              <Grid item xs={12} md={3} key={`card${index}`}>
-                <CustomCard
-                  avatarLabel={avatarLabel}
-                  boxHeading={boxHeading}
-                  boxPara={boxPara}
-                  boxUrl={boxUrl}
-                  boxButtonLabel={boxButtonLabel}
-                />
-              </Grid>
-            )
-          )}
+        <WebDevCarousal />
+        <Typography variant='h4' gutterBottom={true}>
+          Why Choose Us?
+        </Typography>
+        <Typography variant='body2' gutterBottom={true}>
+          So, why should you choose Dpathway for an ecommerce development
+          service? Find the reasons for choosing our advanced and seamless
+          ecommerce development service.
+        </Typography>
+        <Grid container spacing={2} gutterBottom={true}>
+        <WebDevList />
         </Grid>
+        <Typography style={{marginTop: '30px'}} variant='h5' gutterBottom={true}>
+          An Affordable Service Provider
+        </Typography>
+        <Typography variant='body2' gutterBottom={true}>
+          At Dpathway, we maintain transparency in our service packages. Our
+          goal is providing top-quality ecommerce website development solutions
+          at the most affordable budget. Moreover, the satisfaction of the
+          clients is a crucial concern for us. We offer custom ecommerce
+          development services at your suitable budget.
+        </Typography>
+        <Typography variant='body2' gutterBottom={true}>
+          For an advanced ecommerce development service, you can contact us
+          anytime. Call us or write emails to us to get in touch with our team.
+        </Typography>
       </section>
     </Grid>
   );
