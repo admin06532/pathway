@@ -312,48 +312,7 @@ export const CARD_CUSTOM = {
         "Dpathway has a team of efficient and skilled personnel. We assure quick development service for the ecommerce stores.",
     },
   ],
-  APP_DEV_LIST: [
-    {
-      listHeading: "Native App Development Services",
-      listPara:
-        "Using bespoke frameworks, create native web and mobile applications. Our technical teams have created award-winning apps and have extensive experience with open-source technologies like react-native.",
-    },
-    {
-      listHeading: "Cloud Application Development",
-      listPara:
-        "We create unique Cloud Applications with remarkable agility, performance, and interoperability, as well as cloud-native architectures, legacy app modernization, IoT solutions, microservices application architecture, cloud-ready app migration, and more.",
-    },
-    {
-      listHeading: "UX/UI Design & Development",
-      listPara:
-        "Across different digital devices and internet channels, we transform customer experiences. To add functionality to your bespoke app, our UX/UI design professionals leverage the latest user experience and interface (UX/UI) technologies, architectures, setups, and other development best practices.",
-    },
-    {
-      listHeading: "API Integrations",
-      listPara:
-        "By integrating third-party APIs with your existing business systems, we can make use of the tremendous data sharing possibilities. We can also create new APIs to increase the functionality of your existing app, improve performance, and much more.",
-    },
-    {
-      listHeading: "Progressive Web Apps (PWA)",
-      listPara:
-        "We unite web and mobile users in a single PWA with improved UX, a customized UI, and native-like features built using the app shell approach.",
-    },
-    {
-      listHeading: "iOS App Development",
-      listPara:
-        "We specialize in developing full-featured iOS mobile apps that are reliable, scalable, and compatible with iPhone, iPad, Apple TV, and Apple Watch.",
-    },
-    {
-      listHeading: "Android App Development",
-      listPara:
-        "Our Android app developers use cutting-edge technology to create native apps with a solid and evolving architecture.",
-    },
-    {
-      listHeading: "Application Maintenance & Support Services",
-      listPara:
-        "Periodic quality testing and maintenance are performed to identify bottlenecks and areas for improvement, as well as after-sales support to verify that security vulnerabilities are not present.",
-    },
-  ],
+  
   APP_DEV_BULL: [
     "Big Data",
     "Internet of Things",
@@ -392,6 +351,47 @@ export const CARD_CUSTOM = {
           "Our clients prefer us not only because we are fantastic and reasonably priced, but also because we are constantly available. Whether you have a last-minute emergency or require a status report, we are only a phone call, email, or text away!",
         ],
       }
-    ],
-
+  ],
+  APP_DEV_CARD: [
+    {
+      avatarLabel: "NAD",
+      boxHeading: "Native App Development",
+      boxPara: ["We create unique Cloud Applications with remarkable agility, performance, and interoperability, as well as cloud-native architectures, legacy app modernization, IoT solutions, microservices application architecture, cloud-ready app migration, and more."],
+    },
+    {
+      avatarLabel: "iAD",
+      boxHeading: "iOS App Development",
+      boxPara: ["We specialize in developing full-featured iOS mobile apps that are reliable, scalable, and compatible with iPhone, iPad, Apple TV, and Apple Watch."],
+    },
+    {
+      avatarLabel: "AAD",
+      boxHeading: "Android App Development",
+      boxPara: ["Our Android app developers use cutting-edge technology to create native apps with a solid and evolving architecture."],
+    },
+    {
+      avatarLabel: "AMS",
+      boxHeading: "Application Maintenance & Support",
+      boxPara: ["Periodic quality testing and maintenance are performed to identify bottlenecks and areas for improvement, as well as after-sales support to verify that security vulnerabilities are not present."],
+    },
+    {
+      avatarLabel: "CA",
+      boxHeading: "Cloud Application",
+      boxPara: ["We create unique Cloud Applications with remarkable agility, performance, and interoperability, as well as cloud-native architectures, legacy app modernization, IoT solutions, microservices application architecture, cloud-ready app migration, and more."],
+    },
+    {
+      avatarLabel: "UXD",
+      boxHeading: "UX/UI Design",
+      boxPara: ["Across different digital devices and internet channels, we transform customer experiences. To add functionality to your bespoke app, our UX/UI design professionals leverage the latest user experience and interface, architectures, setups, and other development best practices."],
+    },
+    {
+      avatarLabel: "AI",
+      boxHeading: "API Integrations",
+      boxPara: ["By integrating third-party APIs with your existing business systems, we can make use of the tremendous data sharing possibilities. We can also create new APIs to increase the functionality of your existing app, improve performance, and much more."],
+    },
+    {
+      avatarLabel: "PWA",
+      boxHeading: "Progressive Web Apps",
+      boxPara: ["We unite web and mobile users in a single PWA with improved UX, a customized UI, and native-like features built using the app shell approach."]
+    },
+  ]
 };

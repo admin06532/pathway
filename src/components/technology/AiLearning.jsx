@@ -67,34 +67,18 @@ export const AiLearning = React.memo(() => {
               provide the best possible customer experience and gain a
               competitive advantage.
             </Typography>
-            <Typography variant='h4' gutterBottom={true}>
-          We’re Your Team of Software Developers
-        </Typography>
-
-        <Typography variant='body2'>
-          At D Pathway, we’re a team of 200+ experienced software developers,
-          ready to deliver your project. We know our stuff when it comes to
-          bespoke software development, having completed over 200 projects for
-          our clients.
-        </Typography>
-        <Typography variant='body2'>
-          Because we're an extended team, we may join your project at any moment
-          and work alongside your in-house software engineers. You're not part
-          of a team? We also take on whole projects, so don't worry.
-        </Typography>
+            <Typography variant='h5' gutterBottom={true}>
+              Our Artificial learning expertise
+            </Typography>
           </Grid>
         </Grid>
 
         
 
-        <Typography variant='h4' gutterBottom={true} align="center">
-          Our Artificial learning expertise
-        </Typography>
-
         <Grid container spacing={3} className={classes.container}>
           {CARD_CUSTOM.AI.map(
             (
-              {avatarLabel, boxHeading, boxPara, boxUrl, boxButtonLabel},
+              {avatarLabel, boxHeading, boxPara},
               index
             ) => {
               return (
@@ -103,8 +87,6 @@ export const AiLearning = React.memo(() => {
                     avatarLabel={avatarLabel}
                     boxHeading={boxHeading}
                     boxPara={[boxPara]}
-                    boxUrl={boxUrl}
-                    boxButtonLabel={boxButtonLabel}
                   />
                 </Grid>
               );

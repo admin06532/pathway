@@ -28,7 +28,7 @@ const useStyles = makeStyles(() => ({
   box: {
     position: "absolute",
     left: "50%",
-    top: "40%",
+    top: "42%",
     maxWidth: "450px",
   },
 }));

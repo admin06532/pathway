@@ -18,7 +18,7 @@ const useStyle = makeStyles(() => ({
   
 let data;
 
-export const WebDevCarousal = () => {
+export const WebDevCarousal = ({carouselData}) => {
     const classes = useStyle();
     const [pairedData, setPairData] = useState([]);
 
@@ -26,8 +26,9 @@ export const WebDevCarousal = () => {
         setPairData(data);
     }, [pairedData])
 
+    // CARD_CUSTOM.WEB_DEV
     useLayoutEffect(() => {
-        data = CARD_CUSTOM.WEB_DEV.reduce(function (
+        data = carouselData.reduce(function (
             result,
             value,
             index,
@@ -56,7 +57,7 @@ export const WebDevCarousal = () => {
             >
               {parentValue.map(
                 (
-                  {avatarLabel, boxHeading, boxPara, boxUrl, boxButtonLabel},
+                  {avatarLabel, boxHeading, boxPara },
                   index
                 ) => (
                   <Grid item xs={12} md={3} key={`card${index}`}>
@@ -64,8 +65,6 @@ export const WebDevCarousal = () => {
                       avatarLabel={avatarLabel}
                       boxHeading={boxHeading}
                       boxPara={boxPara}
-                      boxUrl={boxUrl}
-                      boxButtonLabel={boxButtonLabel}
                     />
                   </Grid>
                 )

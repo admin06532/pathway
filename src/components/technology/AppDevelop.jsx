@@ -4,9 +4,9 @@ import {Grid, Typography} from "@material-ui/core";
 import DemoImage from "./../../assets/images/ai.jpg";
 import Polygon from "./../../assets/images/polygon.png";
 import {SectionTitle, SectionBackground} from "./../../components/common";
-import {AppDevList} from "./AppDevList";
 import {CARD_CUSTOM} from "./../../constant";
-import {AppDevCard} from "./AppDevCard";
+import {WebDevCarousal} from './WebDevCarousal';
+import clsx from 'clsx';
 
 const useStyles = makeStyles({
   containerWrapper: {
@@ -42,7 +42,8 @@ export const AppDevelop = React.memo(() => {
   const classes = useStyles();
 
   return (
-    <Grid container className={classes.containerWrapper}>
+    <div className={classes.root}>
+    <Grid container className={clsx(classes.containerWrapper)}>
       <SectionBackground imagePath={DemoImage} />
       <section className='container'>
         <Grid container spacing={2} direction='row-reverse'>
@@ -65,25 +66,14 @@ export const AppDevelop = React.memo(() => {
               client success stories include audit and improvement of existing
               apps and modernization of legacy apps.
             </Typography>
-            <Typography variant='h4' gutterBottom={true}>
-              Cutting-edge Technologies We Use for Application Development
+            <Typography variant='h5' gutterBottom={true}>
+              Our Application Development Services
             </Typography>
-            <ul>
-              {CARD_CUSTOM.APP_DEV_BULL.map((list, index) => (
-                <li key={`list${index}`}>{list}</li>
-              ))}
-            </ul>
           </Grid>
         </Grid>
-        <Typography variant='h4' gutterBottom={true} align='center'>
-          Our Application Development Services
-        </Typography>
-        <AppDevList />
-        <Typography variant='h4' gutterBottom={true}>
-          Why Choose Us?
-        </Typography>
-        <AppDevCard />
-      </section>
+          <WebDevCarousal carouselData={CARD_CUSTOM.APP_DEV_CARD} />
+       </section>
     </Grid>
+    </div>
   );
 });

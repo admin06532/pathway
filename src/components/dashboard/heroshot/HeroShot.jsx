@@ -254,7 +254,7 @@ export default function(){
           </Typography>
         </Box>
       </Box>
-      <HomeCarousel />
+      {/* <HomeCarousel /> */}
       {!firstSvgEnd && (
         <Typical
           className={classes.typing}

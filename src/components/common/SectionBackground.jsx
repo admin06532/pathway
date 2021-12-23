@@ -13,7 +13,7 @@ const useStyle = makeStyles((theme) => ({
     width: '40%',
     textAlign: 'center',
     padding: 0,
-    top: '11%',
+    top: '100px',
     zIndex: 2,    
     '&::before': {
       content: '""',
