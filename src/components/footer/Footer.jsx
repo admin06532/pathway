@@ -8,6 +8,12 @@ import {
     Button
   } from '@material-ui/core';
 import clsx from 'clsx';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import RoomIcon from '@material-ui/icons/Room';
 import Logo from './../../assets/images/mobile_logo.png'
 import {FOOTER} from './../../constant';
 
@@ -31,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 0,
     marginTop: '20px',
     backgroundImage: `url(${Logo})`,
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       backgroundPosition: "center 56%",
     },
     backgroundPosition: 'center left 50px',
@@ -63,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
     color: '#666666',
     padding: '30px 0 0',
     fontSize: '12px',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       paddingTop: "65px",
     }
   },
@@ -72,11 +78,7 @@ const useStyles = makeStyles((theme) => ({
       display: 'inline-block',
       position: 'relative',
       fontSize: '14px',
-      borderRight: '1px solid #666666',
       padding: '0 10px',
-      '&:last-child': {
-        borderRight: '0'
-      },
       '&:hover':{
         textDecoration: 'none',
         color: ''
@@ -90,7 +92,7 @@ const useStyles = makeStyles((theme) => ({
     color: '#fff',
     fontWeight: '500',
     padding: '20px 0',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       padding: '5px 0',
     }
   },
@@ -121,12 +123,13 @@ export const Footer = () => {
       <Grid item xs={12} >
         <Paper className={classes.paper} color="invert" elevation={0} >
           <div className={  clsx(classes.main, classes.mxWidth) }>
-            <Link href={FOOTER.LINK_FACEBOOK} className={classes.link} target="_blank" rel="noopener"> Facebook</Link>
-            <Link href={FOOTER.LINK_LIKEDIN} className={classes.link} target="_blank" rel="noopener">LinkedIn</Link>
-            <Link href={FOOTER.LINK_TWITTER}  className={classes.link} target="_blank" rel="noopener"> Twitter </Link>
-            <Link href={FOOTER.LINK_INSTA} className={classes.link} target="_blank" rel="noopener">Instagram</Link>
-            <Link href={FOOTER.LINK_YOUTUBE} className={classes.link} target="_blank" rel="noopener">Youtube</Link>
-            <Link href={FOOTER.LINK_LOCATION} className={classes.link} target="_blank" rel="noopener" >Way to reach</Link>
+            <Link href={FOOTER.LINK_FACEBOOK} className={classes.link} target="_blank" rel="noopener"> <FacebookIcon /></Link>
+            <Link href={FOOTER.LINK_LIKEDIN} className={classes.link} target="_blank" rel="noopener"><LinkedInIcon /></Link>
+            <Link href={FOOTER.LINK_TWITTER}  className={classes.link} target="_blank" rel="noopener"> <TwitterIcon /> </Link>
+            <Link href={FOOTER.LINK_INSTA} className={classes.link} target="_blank" rel="noopener"><InstagramIcon /> </Link>
+            <Link href={FOOTER.LINK_YOUTUBE} className={classes.link} target="_blank" rel="noopener">
+              <YouTubeIcon /></Link>
+            <Link href={FOOTER.LINK_LOCATION} className={classes.link} target="_blank" rel="noopener" ><RoomIcon /></Link>
           </div>
           <Typography variant="body2" align="center" className={classes.copy} spacing={1} >
             {FOOTER.COPYRIGHT}

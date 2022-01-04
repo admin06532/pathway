@@ -1,12 +1,21 @@
 import React, {useEffect, useState} from "react";
 import {ThemeProvider, makeStyles, createTheme} from "@material-ui/core/styles";
-import {Grid, CircularProgress, Backdrop, TextField, Button, Snackbar, Typography} from "@material-ui/core";
+import {
+  Grid,
+  CircularProgress,
+  Backdrop,
+  TextField,
+  Button,
+  Snackbar,
+  Typography,
+} from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
 import {green, deepOrange} from "@material-ui/core/colors";
 import clsx from "clsx";
 import ContactUs from "./../../assets/images/contact_map.png";
-import {SectionTitle } from "./../common";
+import Polygon from "./../../assets/images/polygon.png";
 import {BASE_API} from "./../../constant";
+import { SectionSubTitle } from "../common";
 
 const useStyles = makeStyles((theme) => ({
   snackbar: {
@@ -17,18 +26,22 @@ const useStyles = makeStyles((theme) => ({
   },
   rootContainer: {
     position: "relative",
-    background: '#ffffff ',
+    background: "#ffffff ",
     backgroundImage: `url(${ContactUs})`,
-    backgroundPosition: 'center right',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: '50%'
+    backgroundPosition: "center right",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "50%",
+
+    [theme.breakpoints.down('sm')]: {
+      backgroundImage: 'none',
+    },
   },
 
   root: {
     display: "block",
     flexWrap: "wrap",
     marginRight: theme.spacing(10),
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down("md")]: {
       marginRight: theme.spacing(0),
     },
     paddingTop: theme.spacing(5),
@@ -41,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     width: "97%",
   },
   fullwidthInput: {
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down("md")]: {
       width: "97%",
     },
   },
@@ -50,7 +63,12 @@ const useStyles = makeStyles((theme) => ({
   },
   backdrop: {
     zIndex: theme.zIndex.drawer + 1,
-    color: '#fff',
+    color: "#fff",
+  },
+  sixBgImg: {
+    backgroundImage: `url(${Polygon})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '35%'
   }
 }));
 
@@ -77,11 +95,10 @@ export const Form = () => {
   const [validation, setValidation] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [openBackdrop, setOpenBackdrop] = useState(false);
-  
+
   const handleToggle = () => {
     setOpenBackdrop(!openBackdrop);
   };
-
 
   const handleUser = (e) => {
     let {name, value} = e.currentTarget;
@@ -144,35 +161,35 @@ export const Form = () => {
 
   return (
     <Grid container className={classes.rootContainer}>
-    
-      <Backdrop className={classes.backdrop} open={openBackdrop} onClick={handleToggle}>
-        <CircularProgress color="inherit" />
+      <Backdrop
+        className={classes.backdrop}
+        open={openBackdrop}
+        onClick={handleToggle}
+      >
+        <CircularProgress color='inherit' />
       </Backdrop>
-       
-      <section className='container'>
+
+      <section className={clsx('container', classes.sixBgImg)}>
         <Grid container style={{paddingTop: 40}}>
           <Grid item md={6} xs={12}>
-            <SectionTitle>Contact Us</SectionTitle>
+            <SectionSubTitle>
+              Contact Us
+            </SectionSubTitle>
             <Typography variant='body2'>
               We’re based in Noida; our primary motto is to serve our
               publishing, IT, and manpower services to small and large
               businesses. As Pathways is one of the leading names in the Noida
               and Delhi NCR region, we’re already helping many small-scale and
-              multinational companies across the country.{" "}
+              multinational companies across the country.
             </Typography>
-
             <Typography variant='body2'>
               By partnering with Pathways, we’re always ready to maintain your
               peace of mind by delivering the best possible services. Pathways
               is India’s one of the leading publishing and IT services companies
               available 24/7/365. At our company, we encourage you to push your
-              limits and skyrocket your brand with our services.{" "}
+              limits and skyrocket your brand with our services.
             </Typography>
-
-            <Grid
-              container
-              className={classes.container}
-            >
+            <Grid container className={classes.container}>
               <div className={classes.snackbar}>
                 <Snackbar
                   open={openSnackbar}
@@ -241,11 +258,7 @@ export const Form = () => {
                     />
                   </ThemeProvider>
                 </Grid>
-                <Grid
-                  item
-                  xs={12}
-                  className={classes.cta}
-                >
+                <Grid item xs={12} className={classes.cta}>
                   <Button
                     variant='contained'
                     onClick={submitUserQuery}

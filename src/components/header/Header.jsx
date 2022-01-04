@@ -320,7 +320,7 @@ function openNewUrl(path, blank){
                       >Recruitment Process Outsourcing</MenuItem>
                       <MenuItem 
                         onClick={handleClose}
-                        to="/details/tech"
+                        to="/technology"
                         component={Link}>Technology</MenuItem>
                       <MenuItem 
                       onClick={handleClose} 

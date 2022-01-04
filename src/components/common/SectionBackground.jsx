@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 const useStyle = makeStyles((theme) => ({
   bannerImage: {
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       display: 'none',
     },
     position: 'absolute',

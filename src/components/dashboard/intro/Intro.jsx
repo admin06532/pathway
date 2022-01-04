@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import {Typography, Grid, Button} from "@material-ui/core";
 import {Link} from "react-router-dom";
-import {SectionTitle, SectionBackground} from "./../../common";
+import {SectionSubTitle, SectionBackground} from "./../../common";
 import DemoImage from "./../../../assets/images/Introduction.png";
 import {SectionContext} from "../../../contexts/theme";
 
@@ -13,7 +13,7 @@ export default function () {
       <SectionBackground imagePath={DemoImage} align='right' />
       <section className='container'>
         <Grid item xs={12} md={6} className={classes.gridItem}>
-          <SectionTitle>Introduction</SectionTitle>
+          <SectionSubTitle>Introduction</SectionSubTitle>
           <Grid container>
             <Grid item>
               <Typography variant='body2' gutterBottom={true}>

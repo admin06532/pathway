@@ -39,7 +39,21 @@ export const SectionTitle = ({children, align = "left"}) => {
   const classes = useStyle();
   return (
     <Typography
-      variant='h2'
+      variant='h4'
+      component='h1'
+      align={align}
+      className={classes.root}
+    >
+      {children}
+    </Typography>
+  );
+};
+
+export const SectionSubTitle = ({children, align = "left"}) => {
+  const classes = useStyle();
+  return (
+    <Typography
+      variant='h4'
       component='h2'
       align={align}
       className={classes.root}

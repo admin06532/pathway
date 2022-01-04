@@ -42,7 +42,6 @@ export const AppDevelop = React.memo(() => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
     <Grid container className={clsx(classes.containerWrapper)}>
       <SectionBackground imagePath={DemoImage} />
       <section className='container'>
@@ -74,6 +73,5 @@ export const AppDevelop = React.memo(() => {
           <WebDevCarousal carouselData={CARD_CUSTOM.APP_DEV_CARD} />
        </section>
     </Grid>
-    </div>
   );
 });
