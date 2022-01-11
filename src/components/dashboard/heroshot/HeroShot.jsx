@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "flex-end",
     position: 'absolute',
-    bottom: '10px',
+    bottom: '20px',
     right: 0
   },
   contentRestrict: {

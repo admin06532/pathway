@@ -327,17 +327,6 @@ function openNewUrl(path, blank){
                       to="/enterprise/education"
                       component={Link}
                       >Education</MenuItem>
-                      <MenuItem 
-                        onClick={handleClose} 
-                        to="/enterprise/health"
-                        component={Link}>Health Care </MenuItem>
-                      <MenuItem 
-                        onClick={handleClose} 
-                        to="/enterprise/networking"
-                        component={Link}>Networking</MenuItem>
-                      <MenuItem onClick={handleClose} 
-                        to="/enterprise/ai"
-                        component={Link}>Artificial Intellisense</MenuItem>
                     </Menu>
 
                     <Button
