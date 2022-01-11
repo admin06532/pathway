@@ -4,25 +4,23 @@ import {makeStyles} from "@material-ui/core/styles";
 import HeroImage from "./../../../assets/images/heroshot/banner_2-min.jpg";
 import {SvgCircle} from "./../svgCircle/SvgCircle";
 import Typical from "react-typical";
-import {HomeCarousel} from "./../homecarousel/HomeCarousel";
 
 const useStyles = makeStyles((theme) => ({
   content: {
     paddingRight: theme.spacing(8),
-    textAlign: "left",
     display: "flex",
-    justifyContent: "center",
-    alignItems: "end",
-    height: "70vh",
-    position: 'relative',
+    justifyContent: "flex-end",
+    position: 'absolute',
+    bottom: '10px',
+    right: 0
   },
   contentRestrict: {
-        position: 'absolute',
-        left: '0',
-        right: '0',
-        top: '0',
-        bottom: '0',
-        zIndex: '111',
+    position: "absolute",
+    left: "0",
+    right: "0",
+    top: "0",
+    bottom: "0",
+    zIndex: "111",
   },
   container: {
     height: "100vh",
@@ -30,10 +28,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundPosition: "0 50px",
     display: "flex",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    [theme.breakpoints.down('sm')]: {
-      display: 'none',
+    justifyContent: "flex-end",
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
     },
   },
   circle: {
@@ -44,13 +41,13 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "rgb(64 189 237 / 90%)",
     borderRadius: "50%",
     width: "160px",
-    color: '#ffffff',
+    color: "#ffffff",
     height: "160px",
     "&:hover": {
       boxShadow: "3px 13px 19px 0px rgb(50 50 50 / 52%)",
       backgroundColor: "#00a4e8",
-      color: '#ffffff',
-      transform: 'scale(0.95)'
+      color: "#ffffff",
+      transform: "scale(0.95)",
     },
   },
   typing: {
@@ -58,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     color: "#ffffff",
     width: "calc(50vw)",
     position: "absolute",
-    bottom: 0,
+    top: 100,
     right: 0,
     textAlign: "left",
     padding: "20px",
@@ -87,8 +84,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function(){
-
+const Heroshot = () => {
   const classes = useStyles();
 
   const [firstSvgEnd, setFirstSvgEnd] = useState(false);
@@ -103,12 +99,11 @@ export default function(){
     }
   };
 
-  if(firstSvgEnd && secondSvgEnd && thirdSvgEnd){
+  if (firstSvgEnd && secondSvgEnd && thirdSvgEnd) {
     localStorage.setItem("circleLoaded", "true");
   }
 
   useEffect(() => {
-
     switch (element) {
       case "id1":
       case "svgid1":
@@ -133,19 +128,18 @@ export default function(){
       default:
         setToolTip("");
     }
-
-     
   }, [element]);
 
   const styleSx = {
-    display: 'flex',
     alignItems: "center",
-    justifyContent: "center",
-    width: "50vw",
-    height: "100vh",
     backgroundColor: "rgb(64 189 237 / 90%)",
-    color: "white",
     borderRadius: "4px",
+    color: "white",
+    display: "flex",
+    height: "50vh",
+    justifyContent: "center",
+    marginTop: "100px",
+    width: "50vw",
     "&:hover": {
       backgroundColor: "secondary.main",
       opacity: [0.9, 0.8, 0.7],
@@ -154,107 +148,6 @@ export default function(){
 
   return (
     <Box className={classes.container}>
-      <Box className={classes.content} sx={{width: "100%", maxWidth: 700}}>
-        {!thirdSvgEnd && <div className={classes.contentRestrict}></div>}
-        <Box
-          className={classes.circle}
-          sx={{
-            padding: "10px",
-            cursor:
-              firstSvgEnd && secondSvgEnd && thirdSvgEnd ? "pointer" : "wait",
-                border: firstSvgEnd && '7px inset #035e81',
-          }}
-          marginRight='10px'
-          onMouseEnter={handleBoxClick}
-          onClick={handleBoxClick}
-          onMouseLeave={() => setElement(null)}
-          id="svgid1"
-        >
-         {!firstSvgEnd && <SvgCircle
-            id='id1'
-            duration='30s'
-            start='0'
-            end='510'
-            repeatDuration='20s'
-            onEnd={setFirstSvgEnd}
-          />}
-          <Typography 
-            variant='h5'
-            component='h5'
-            align='left'>
-            IT Consulting
-          </Typography>
-        </Box>
-        <Box
-          className={classes.circle}
-          sx={{
-            width: "151px",
-            height: "151px",
-            padding: "10px",
-            cursor:
-              firstSvgEnd && secondSvgEnd && thirdSvgEnd ? "pointer" : "wait",
-              border: secondSvgEnd && '7px inset #035e81',
-          }}
-          marginRight='10px'
-          onMouseEnter={handleBoxClick}
-          onClick={handleBoxClick}
-          onMouseLeave={() => setElement(null)}
-          id="svgid2"
-        >
-          {firstSvgEnd && !secondSvgEnd && (
-            <SvgCircle
-              id='id2'
-              duration='20s'
-              onEnd={setSecondSvgEnd}
-              start='0'
-              end='510'
-              repeatDuration='20s'
-            />
-          )}
-          <Typography
-            variant='h5'
-            component='h5'
-            align='left'
-          >
-            Publishing
-          </Typography>
-        </Box>
-        <Box
-          className={classes.circle}
-          sx={{
-            width: "151px",
-            height: "151px",
-            padding: "10px",
-            cursor:
-              firstSvgEnd && secondSvgEnd && thirdSvgEnd ? "pointer" : "wait",
-              border: thirdSvgEnd && '7px inset #035e81',
-          }}
-          marginRight='10px'
-          onMouseEnter={handleBoxClick}
-          onClick={handleBoxClick}
-          onMouseLeave={() => setElement(null)}
-          id="svgid3"
-        >
-          {secondSvgEnd && !thirdSvgEnd && (
-            <SvgCircle
-              id='id3'
-              duration='20s'
-              onEnd={setThirdSvgEnd}
-              start='10'
-              end='510'
-              repeatDuration='30s'
-            />
-          )}
-          <Typography
-            variant='h5'
-            component='h5'
-            align='left'
-          >
-            Technology
-          </Typography>
-        </Box>
-      </Box>
-      {/* <HomeCarousel /> */}
       {!firstSvgEnd && (
         <Typical
           className={classes.typing}
@@ -288,13 +181,104 @@ export default function(){
           wrapper='code'
         />
       )}
-
-{toolTip && (
-        <Box
-          pl={6}
-          pr={6}
-          sx={styleSx}
-        >
+ <Box className={classes.content} sx={{width: "100%", maxWidth: 700}}>
+            {!thirdSvgEnd && <div className={classes.contentRestrict}></div>}
+            <Box
+              className={classes.circle}
+              sx={{
+                padding: "10px",
+                cursor:
+                  firstSvgEnd && secondSvgEnd && thirdSvgEnd
+                    ? "pointer"
+                    : "wait",
+                border: firstSvgEnd && "7px inset #035e81",
+              }}
+              marginRight='10px'
+              onMouseEnter={handleBoxClick}
+              onClick={handleBoxClick}
+              onMouseLeave={() => setElement(null)}
+              id='svgid1'
+            >
+              {!firstSvgEnd && (
+                <SvgCircle
+                  id='id1'
+                  duration='30s'
+                  start='0'
+                  end='510'
+                  repeatDuration='20s'
+                  onEnd={setFirstSvgEnd}
+                />
+              )}
+              <Typography variant='h5' component='h5' align='left'>
+                IT Consulting
+              </Typography>
+            </Box>
+            <Box
+              className={classes.circle}
+              sx={{
+                width: "151px",
+                height: "151px",
+                padding: "10px",
+                cursor:
+                  firstSvgEnd && secondSvgEnd && thirdSvgEnd
+                    ? "pointer"
+                    : "wait",
+                border: secondSvgEnd && "7px inset #035e81",
+              }}
+              marginRight='10px'
+              onMouseEnter={handleBoxClick}
+              onClick={handleBoxClick}
+              onMouseLeave={() => setElement(null)}
+              id='svgid2'
+            >
+              {firstSvgEnd && !secondSvgEnd && (
+                <SvgCircle
+                  id='id2'
+                  duration='20s'
+                  onEnd={setSecondSvgEnd}
+                  start='0'
+                  end='510'
+                  repeatDuration='20s'
+                />
+              )}
+              <Typography variant='h5' component='h5' align='left'>
+                Publishing
+              </Typography>
+            </Box>
+            <Box
+              className={classes.circle}
+              sx={{
+                width: "151px",
+                height: "151px",
+                padding: "10px",
+                cursor:
+                  firstSvgEnd && secondSvgEnd && thirdSvgEnd
+                    ? "pointer"
+                    : "wait",
+                border: thirdSvgEnd && "7px inset #035e81",
+              }}
+              marginRight='10px'
+              onMouseEnter={handleBoxClick}
+              onClick={handleBoxClick}
+              onMouseLeave={() => setElement(null)}
+              id='svgid3'
+            >
+              {secondSvgEnd && !thirdSvgEnd && (
+                <SvgCircle
+                  id='id3'
+                  duration='20s'
+                  onEnd={setThirdSvgEnd}
+                  start='10'
+                  end='510'
+                  repeatDuration='30s'
+                />
+              )}
+              <Typography variant='h5' component='h5' align='left'>
+                Technology
+              </Typography>
+            </Box>
+          </Box>
+      {toolTip && <Box pl={6} pr={6} sx={styleSx}>
           <Typography
             variant='subtitle1'
             align='left'
@@ -305,9 +289,12 @@ export default function(){
           >
             {toolTip}
           </Typography>
-        </Box>
-      )}
 
+         
+        </Box>
+      }
     </Box>
   );
 };
+
+export default Heroshot;

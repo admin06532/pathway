@@ -13,7 +13,7 @@ const useStyle = makeStyles((theme) => ({
     width: '40%',
     textAlign: 'center',
     padding: 0,
-    top: '100px',
+    top: '60px',
     zIndex: 2,    
     '&::before': {
       content: '""',
@@ -26,7 +26,7 @@ const useStyle = makeStyles((theme) => ({
       height: "100%",
       width: "112%",
       background: "linear-gradient( 45deg,#3FBDED 0%,#00A4E8 100%)",
-      transform: "rotate(10deg)",
+      transform: "rotate(-5deg)",
     },
   },
   bannerImageRight: {
@@ -35,11 +35,12 @@ const useStyle = makeStyles((theme) => ({
     '&::before': {
       left: 'auto',
       right: '-15%',
+      transform: "rotate(10deg)",
     }
   },
 
   img: {
-    height: "100%",
+    height: "90%",
     margin: "auto",
     borderRadius: "50%",
     boxShadow: "5px 5px 36px rgb(64 189 237 / 50%)",

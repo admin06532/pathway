@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
         },
         '& .MuiMenu-list': {
             paddingTop: 0,
-            borderTop: '8px solid #e65100',
+            borderTop: '8px solid #1fb1ea',
             '& .MuiListItem-root': {
                
             } 
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: '10px',
         position: 'relative',
         '&[activeclassname="active"]' : {
-            backgroundColor: '#e65100',
+            backgroundColor: '#1fb1ea',
             color: 'white',  
         },
         "&:after" : {
@@ -68,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
         },
         '&:not([activeclassname="active"]):hover' : {
             animation: `$hoverIn 300ms ${theme.transitions.easing.easeInOut} forwards`,
-            backgroundColor: '#e65100'
+            backgroundColor: '#1fb1ea'
         }
     },
     "@keyframes hoverIn": {

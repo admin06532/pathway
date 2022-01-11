@@ -5,7 +5,7 @@ import {CustomCard, SectionSubTitle, SectionBackground} from "./../../common";
 import {CARD_CUSTOM} from "./../../../constant";
 import {SectionContext} from "../../../contexts/theme";
 
-export default function () {
+ const SoftWareConsultant = () => {
   const {classes} = useContext(SectionContext);
 
   return (
@@ -13,7 +13,7 @@ export default function () {
       <SectionBackground imagePath={DemoImage} />
       <section className='container'>
         <Grid container spacing={2} direction='row-reverse'>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={8}>
             <SectionSubTitle>
               Stand Out of the Competition with Renowned Digital Company India
             </SectionSubTitle>
@@ -63,3 +63,5 @@ export default function () {
     </Grid>
   );
 }
+
+export default SoftWareConsultant;

@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
   },
   rootContainer: {
     position: "relative",
-    background: "#ffffff ",
     backgroundImage: `url(${ContactUs})`,
     backgroundPosition: "center right",
     backgroundRepeat: "no-repeat",
@@ -68,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
   sixBgImg: {
     backgroundImage: `url(${Polygon})`,
     backgroundRepeat: 'no-repeat',
-    backgroundSize: '35%'
+    backgroundSize: '25%'
   }
 }));
 
@@ -160,7 +159,8 @@ export const Form = () => {
   }, [userInput, openSnackbar, successMessage, openBackdrop]);
 
   return (
-    <Grid container className={classes.rootContainer}>
+    <div className={classes.sixBgImg}>
+      <Grid container className={classes.rootContainer}>
       <Backdrop
         className={classes.backdrop}
         open={openBackdrop}
@@ -168,8 +168,7 @@ export const Form = () => {
       >
         <CircularProgress color='inherit' />
       </Backdrop>
-
-      <section className={clsx('container', classes.sixBgImg)}>
+      <section className={'container'}>
         <Grid container style={{paddingTop: 40}}>
           <Grid item md={6} xs={12}>
             <SectionSubTitle>
@@ -276,5 +275,6 @@ export const Form = () => {
         </Grid>
       </section>
     </Grid>
+    </div>
   );
 };
