@@ -242,7 +242,7 @@ const Heroshot = () => {
                 />
               )}
               <Typography variant='h5' component='h5' align='left'>
-                Publishing
+                e-Publishing
               </Typography>
             </Box>
             <Box

@@ -5,7 +5,7 @@ import DemoImage from "./../../../assets/images/Publishing.png";
 import { CARD_CUSTOM } from "../../../constant";
 import {SectionContext} from './../../../contexts/theme'
 
-export default function() {
+const Publish = () => {
   const {classes} = useContext(SectionContext);
 
   return (
@@ -45,8 +45,9 @@ export default function() {
                 )) 
                 }
             </Grid>
-          
       </section>
     </Grid>
   );
 };
+
+export default Publish;

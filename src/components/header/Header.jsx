@@ -275,7 +275,7 @@ function openNewUrl(path, blank){
                         onClick={handleClose}
                         to="/oursolution/publishing"
                         component={Link}
-                      >Publishing &amp; Conversion</MenuItem>
+                      >e-Publishing &amp; Conversion</MenuItem>
                       <MenuItem 
                         onClick={handleClose}
                         to="/oursolution/learning"
@@ -322,11 +322,11 @@ function openNewUrl(path, blank){
                         onClick={handleClose}
                         to="/technology"
                         component={Link}>Technology</MenuItem>
-                      <MenuItem 
+                      {/* <MenuItem 
                       onClick={handleClose} 
                       to="/enterprise/education"
                       component={Link}
-                      >Education</MenuItem>
+                      >Education</MenuItem> */}
                     </Menu>
 
                     <Button
@@ -345,15 +345,6 @@ function openNewUrl(path, blank){
                     className={classes.buttonBase}
                   >
                     WHY PATHWAY?
-                  </Button>
-                  <Button
-                    variant="text"
-                    component={Link}
-                    to="/career"
-                    color="default"
-                    className={classes.buttonBase}
-                  >
-                    CAREERS
                   </Button>
                   <Button
                     variant="text"
