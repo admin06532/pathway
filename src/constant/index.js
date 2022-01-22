@@ -76,7 +76,7 @@ export const CARD_CUSTOM = {
       boxPara: [
         "Our HR advisory services help you improve operational & organizational activities by putting right people with right capability at right costs doing the right thing.",
       ],
-      boxUrl: "/",
+      boxUrl: "/usStaffing",
       boxButtonLabel: "Know More...",
     },
     {
@@ -85,7 +85,7 @@ export const CARD_CUSTOM = {
       boxPara: [
         "We also conduct outsourcing a business practice in which certain talent acquisition functions required by the business are performed on a contract basis.",
       ],
-      boxUrl: "/",
+      boxUrl: "/outSource",
       boxButtonLabel: "Know More...",
     },
     {
@@ -94,7 +94,7 @@ export const CARD_CUSTOM = {
       boxPara: [
         "Our CPR is just the solution you need for a temporary job without running up huge expenses on employment formalities.",
       ],
-      boxUrl: "/",
+      boxUrl: "/contract",
       boxButtonLabel: "Know More...",
     },
     {
@@ -103,7 +103,7 @@ export const CARD_CUSTOM = {
       boxPara: [
         "Our recruitment consultants follow a client-based strategy to search for and make available the job-ready talent, thereby cutting your cost on recruitment process.",
       ],
-      boxUrl: "/",
+      boxUrl: "/permanent",
       boxButtonLabel: "Know More...",
     },
   ],
@@ -312,7 +312,73 @@ export const CARD_CUSTOM = {
         "Dpathway has a team of efficient and skilled personnel. We assure quick development service for the ecommerce stores.",
     },
   ],
-  
+  US_STAFF: [
+    {
+      avatarLabel: "BFP",
+      boxHeading: "BruteForce Planning",
+      boxPara: [
+        "BruteForce Planning can be considered as the quantitative and qualitative measurement of the group of employees required in an enterprise. Therefore, in an overall sense, the planning process involves the hardships in creating and evaluating the manpower required for the business growth.",
+      ]
+    },
+    // {
+    //   avatarLabel: "SOP",
+    //   boxHeading: "Selection of Personnel",
+    //   boxPara: [
+    //     "The objective behind the selection is to decide whether a candidate is suitable for employment in the organization or not. Therefore, the crucial step is to select the right candidates to fulfill various positions in the organization.",
+    //   ]
+    // },
+    {
+      avatarLabel: "O",
+      boxHeading: "Onboarding",
+      boxPara: [
+        "After selection, the next step is to onboard the employee into the organization for his/her specific role. Which not only praises the organization but also boosts the morale of the onboarding employee.",
+      ]
+    },
+    {
+      avatarLabel: "OnJT",
+      boxHeading: "On the Job Training ",
+      boxPara: [
+        "After Onboarding, the next step is to train the employee with your business values and code of conduct, additionally enriching their learning capabilities so that employee can provide a huge amount of work during his tenure.",
+      ]
+    },
+    {
+      avatarLabel: "OfJT",
+      boxHeading: "Off the Job Training",
+      boxPara: [
+        "After providing on-the-job training it is highly required for the employee's growth to provide him with external or say off-the-job training for gaining the high-most experience about the outside world.",
+      ]
+    },
+  ],
+  OUT_SOURCE: [
+    {
+      avatarLabel: "PO",
+      boxHeading: "Professional OutSourcing",
+      boxPara: [
+        "Professional OutSourcing is one of the most popular types of outsourcing containing analysis, legal employment, information technology (IT), and administrative support as there is a possibility for high-cost savings.",
+      ]
+    },
+    {
+      avatarLabel: "ItO",
+      boxHeading: "IT OutSourcing",
+      boxPara: [
+        "IT OutSourcing is one of the most common services nowadays, involving organizational techy needs going from designing and developing the software to the maintenance and support of the respective software. In short, it includes both before and after services for the software.",
+      ]
+    },
+    {
+      avatarLabel: "OO",
+      boxHeading: "Operational OutSourcing",
+      boxPara: [
+        "Operational OutSourcing is one of the most common outsourcing in the manufacturing industry, mainly concerned with providing services related to equipment repairs. Such kind of outsourcing is being done under service-based companies for effectively landscaping of the product and on-time delivery as well.",
+      ]
+    },
+    {
+      avatarLabel: "MO",
+      boxHeading: "Manufacturing OutSourcing",
+      boxPara: [
+        "Manufacturing OutSourcing is majorly industry-specific including automobile manufacturers. Such type of outsourcing mainly deals in the nature for compete for the business with large-scale business competitors. Just for the sake of continuous modification and up-gradation of equipment.",
+      ]
+    },
+  ],
   APP_DEV_BULL: [
     "Big Data",
     "Internet of Things",

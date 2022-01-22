@@ -263,7 +263,7 @@ function openNewUrl(path, blank){
                     >
                       <MenuItem 
                         onClick={handleClose}
-                        to="/oursolution/ustaff"
+                        to="/usStaffing"
                         component={Link}
                       >US Staffing</MenuItem>        
                       <MenuItem 
@@ -322,11 +322,6 @@ function openNewUrl(path, blank){
                         onClick={handleClose}
                         to="/technology"
                         component={Link}>Technology</MenuItem>
-                      {/* <MenuItem 
-                      onClick={handleClose} 
-                      to="/enterprise/education"
-                      component={Link}
-                      >Education</MenuItem> */}
                     </Menu>
 
                     <Button
