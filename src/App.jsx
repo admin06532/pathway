@@ -7,6 +7,8 @@ import UsStaffing from './container/usStaffing';
 import OutSource from './container/outSourcing';
 import Contract from './container/CPR';
 import Permanent from './container/PPR';
+import Whypathway from './container/whyPathway';
+
 import { NotFound } from './components/404';
 import { AboutUs } from './container/aboutUs/aboutUs';
 import { Technology } from './container/technologies';
@@ -68,6 +70,10 @@ const App = () => {
           <Route path="/technology">
             <Technology />
           </Route>
+          <Route path="/whypathways">
+            <Whypathway />
+          </Route>
+          
           <Route>
               <NotFound />
           </Route>
