@@ -7,7 +7,7 @@ import {
   ListItemText,
 } from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
-import AboutImage from "./../../assets/images/heroshot/banner_2-min.png";
+import PermanentImg from "./../../assets/images/ppr.jpg";
 import clsx from "clsx";
 
 const useStyles = makeStyles(() => ({
@@ -26,7 +26,7 @@ const useStyles = makeStyles(() => ({
     paddingTop: "100px",
     minHeight: "100vh",
     width: "100%",
-    backgroundImage: `url(${AboutImage})`,
+    backgroundImage: `url(${PermanentImg})`,
     backgroundSize: "cover",
     position: "relative",
     "& .MuiTypography-h2": {

@@ -1,7 +1,7 @@
 import React from "react";
 import {Typography, Grid, List, ListItem} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
-import TechImage from "./../../assets/images/techbanner.png";
+import UsStaffImg from "./../../assets/images/usStaff.jpg";
 import {
   CustomCard,
   SectionTitle,
@@ -20,7 +20,7 @@ const useStyles = makeStyles(() => ({
     paddingTop: "100px",
     minHeight: "100vh",
     width: "100%",
-    backgroundImage: `url(${TechImage})`,
+    backgroundImage: `url(${UsStaffImg})`,
     backgroundSize: "cover",
     position: "relative",
     "& .MuiTypography-h2": {

@@ -1,7 +1,7 @@
 import React from "react";
 import {Grid, Typography, List, ListItem} from "@material-ui/core";
 import {makeStyles} from "@material-ui/styles";
-import DemoImage from "./../../assets/images/about_us.png";
+import MissionImg from "./../../assets/images/mission.png";
 import Polygon from "./../../assets/images/polygon.png";
 import {SectionBackground, SectionTitle, SectionSubTitle} from "./../common";
 
@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     flexGrow: 1,
     backgroundImage: `url(${Polygon})`,
-    backgroundColor: "#fff",
+    backgroundColor: "#f3f4fd",
     backgroundPosition: "center left -10px",
     backgroundSize: "32%",
     backgroundRepeat: "no-repeat",
@@ -82,7 +82,7 @@ export const OtherWhySectionTwo = () => {
 
   return (
     <Grid container className={classes.root}>
-      <SectionBackground imagePath={DemoImage} align='right' />
+      <SectionBackground imagePath={MissionImg} align='right' />
       <section className='container'>
         <Grid container spacing={2}>
           <Grid item xs={12} md={7}>

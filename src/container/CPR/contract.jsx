@@ -7,7 +7,7 @@ import {
   ListItemText
 } from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
-import AboutImage from "./../../assets/images/heroshot/banner_2-min.png";
+import ContractImage from "./../../assets/images/contract.jpg";
 import clsx from "clsx";
 
 const useStyles = makeStyles(() => ({
@@ -24,9 +24,10 @@ const useStyles = makeStyles(() => ({
   banner: {
     boxSizing: "border-box",
     paddingTop: "100px",
+   
     minHeight: "100vh",
     width: "100%",
-    backgroundImage: `url(${AboutImage})`,
+    backgroundImage: `url(${ContractImage})`,
     backgroundSize: "cover",
     position: "relative",
     "& .MuiTypography-h2": {
@@ -38,8 +39,8 @@ const useStyles = makeStyles(() => ({
   },
   box: {
     position: "absolute",
-    left: "50%",
-    top: "40%",
+    left: "calc(50% + 80px)",
+    top: "42%",
     maxWidth: "450px",
   },
   initial: {
@@ -56,6 +57,9 @@ const useStyles = makeStyles(() => ({
     '& .MuiTypography-body2': {
       paddingBottom: 0
     }
+  },
+  paddingLeft50: {
+    paddingLeft: "50px"
   }
 }));
 
@@ -66,7 +70,7 @@ export const Contract = () => {
       <div className={classes.banner}>
         <Typography
           variant='h2'
-          className={classes.deskTopMaxWidth}
+          className={clsx(classes.deskTopMaxWidth, classes.paddingLeft50) }
           component='div'
           align='left'
         >
@@ -74,7 +78,7 @@ export const Contract = () => {
         </Typography>
         <div className={classes.box}>
           <Typography gutterBottom={true}>
-            DPathway helps you in getting into a Contract Permanent Recruitment
+            D Pathway helps you in getting into a Contract Permanent Recruitment
             which is a short-term position with the later opportunity to become
             a full-time or permanent job at the end of the tenure or after the
             end of the contract.

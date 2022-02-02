@@ -1,7 +1,7 @@
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {Grid, Typography} from "@material-ui/core";
-import DemoImage from "./../../assets/images/ai.jpg";
+import RoundingImage from "./../../assets/images/ronding.png";
 import Polygon from "./../../assets/images/polygon.png";
 import {SectionTitle, SectionBackground} from "./../../components/common";
 import clsx from "clsx";
@@ -9,7 +9,7 @@ import clsx from "clsx";
 const useStyles = makeStyles({
   containerWrapper: {
     position: "relative",
-    backgroundColor: "#f3f4fd",
+    backgroundColor: "#ffffff",
     backgroundImage: Polygon,
     backgroundPosition: "center right",
     backgroundRepeat: "no-repeat",
@@ -41,7 +41,7 @@ export const OtherWhySection = React.memo(() => {
 
   return (
     <Grid container className={clsx(classes.containerWrapper)}>
-      <SectionBackground imagePath={DemoImage} />
+      <SectionBackground imagePath={RoundingImage} />
       <section className='container'>
         <Grid container spacing={2} direction='row-reverse'>
           <Grid item xs={12} md={6}>

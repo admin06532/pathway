@@ -322,16 +322,12 @@ function openNewUrl(path, blank){
                         onClick={handleClose}
                         to="/technology"
                         component={Link}>Technology</MenuItem>
-                    </Menu>
+                      <MenuItem 
+                        onClick={() => openNewUrl("https://www.aenyvish.com/", true)}
+                        to="/technology"
+                        component={Link}>Content &amp; Publishing</MenuItem>
 
-                    <Button
-                        variant="text"
-                        color="default"
-                        className={classes.buttonBase}
-                        onClick={ () => openNewUrl("https://www.aenyvish.com/", true)}
-                    >
-                      CONTENT &amp; PUBLISHING
-                  </Button>
+                    </Menu>
                   <Button
                     variant="text"
                     component={Link}
