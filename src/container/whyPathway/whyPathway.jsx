@@ -1,17 +1,9 @@
 import React from "react";
-import {Typography, Grid, List, ListItem} from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import TechImage from "./../../assets/images/heroshot/banner_1-min.png";
 import WhyIntro from './../../components/whyPath/ItConsulting';
-// import {
-//   CustomCard,
-//   SectionTitle,
-//   SectionBackground,
-// } from "./../../components/common";
-import {CARD_CUSTOM} from "./../../constant";
-import clsx from "clsx";
 import { OtherWhySection } from "../../components/whyPath/OtherSection";
-import { OtherWhySectionTwo } from "../../components/whyPath/OtherSectionTwo";
 
 const useStyles = makeStyles(() => ({
   deskTopMaxWidth: {
@@ -71,7 +63,6 @@ export const Whypathway = () => {
       </Grid>
       <WhyIntro />
       <OtherWhySection />
-      <OtherWhySectionTwo />
     </>
   );
 };

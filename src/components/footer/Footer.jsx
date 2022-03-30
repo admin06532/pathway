@@ -5,7 +5,6 @@ import {
     Grid,
     Typography,
     Link,
-    Button
   } from '@material-ui/core';
 import clsx from 'clsx';
 import TwitterIcon from '@material-ui/icons/Twitter';
@@ -87,14 +86,8 @@ const useStyles = makeStyles((theme) => ({
   banner : {
     background: 'rgba(63,189,237,1)',
     width: '100%',
-    marginBottom: '20px',
-    textAlign: 'center',
-    color: '#fff',
-    fontWeight: '500',
-    padding: '20px 0',
-    [theme.breakpoints.down('sm')]: {
-      padding: '5px 0',
-    }
+    height: '4px',
+    marginBottom: '40px'
   },
   column: {
     [theme.breakpoints.down('md')]: {
@@ -110,9 +103,7 @@ export const Footer = () => {
   
   return (
     <div className={classes.root}>
-      <div className={classes.banner} >
-          <Button onClick={() => document.querySelector('html').scrollTop = 0 } color="inherit">Back to top</Button>
-      </div>
+      <div className={classes.banner} />
       <Grid container className={clsx(classes.mxWidth, classes.column) }>
         {
          FOOTER.ITEM.map( (v, i) => {

@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     flexGrow: 1,
     backgroundImage: `url(${Polygon})`,
-    backgroundColor: "#f3f4fd",
+    backgroundColor: "#ffffff",
     backgroundPosition: "center left -10px",
     backgroundSize: "32%",
     backgroundRepeat: "no-repeat",

@@ -112,7 +112,7 @@ export const CARD_CUSTOM = {
       avatarLabel: "TP",
       boxHeading: "Typesetting & Pagination",
       boxList: ["Galley", "Pagination", "Revise/Repro", "Final Print PDF"],
-      boxUrl: "/",
+      boxUrl: "https://www.aenyvish.com/",
       boxButtonLabel: "Know More...",
     },
     {
@@ -124,7 +124,7 @@ export const CARD_CUSTOM = {
         "Enhanced eBooks / Multimedia eBooks",
         "Web Accessible eBook Development",
       ],
-      boxUrl: "/",
+      boxUrl: "https://www.aenyvish.com/",
       boxButtonLabel: "Know More...",
     },
     {
@@ -137,7 +137,7 @@ export const CARD_CUSTOM = {
         "DocBook XML",
         "XML to HTML Transformation",
       ],
-      boxUrl: "/",
+      boxUrl: "https://www.aenyvish.com/",
       boxButtonLabel: "Know More...",
     },
     {
@@ -149,7 +149,7 @@ export const CARD_CUSTOM = {
         "Motion Graphics",
         "Stop Motion",
       ],
-      boxUrl: "/",
+      boxUrl: "https://www.aenyvish.com/",
       boxButtonLabel: "Know More...",
     },
   ],

@@ -9,7 +9,7 @@ const Publish = () => {
   const {classes} = useContext(SectionContext);
 
   return (
-    <Grid container className={classes.root}>
+    <Grid id="publish" container className={classes.root}>
       <SectionBackground imagePath={DemoImage} align='right' />
       <section className='container'>
         <Grid
@@ -38,7 +38,6 @@ const Publish = () => {
                       avatarLabel={avatarLabel}
                       boxHeading={boxHeading}
                       boxList={boxList}
-                      boxUrl={boxUrl}
                       boxButtonLabel={boxButtonLabel}
                     />
                 </Grid>

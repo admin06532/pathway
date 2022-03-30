@@ -22,3 +22,8 @@ a {
     width: 100%;
   }
 }; 
+
+.modal-form {
+  background-color: #fff;
+  border-radius: 3px;
+}

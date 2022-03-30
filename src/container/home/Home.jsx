@@ -1,29 +1,16 @@
-import React, {Suspense} from "react";
+import React from "react";
+import { withRouter } from "react-router-dom";
 import {Form} from "./../../components/form";
 import {makeStyles} from "@material-ui/core/styles";
 import {SectionContext} from "../../contexts/theme";
 import Polygon from "./../../assets/images/polygon.png";
-const Mdash = React.lazy(() =>
-  import("./../../components/dashboard/mdash/Mdash")
-);
-const HeroShot = React.lazy(() =>
-  import("./../../components/dashboard/heroshot/HeroShot")
-);
-const SoftwareConsultancy = React.lazy(() =>
-  import("./../../components/dashboard/softwareConsultancy/SoftwareConsultancy")
-);
-const IntroApp = React.lazy(() =>
-  import("./../../components/dashboard/intro/Intro")
-);
-const Striper = React.lazy(() =>
-  import("./../../components/dashboard/striper/Striper")
-);
-const Publish = React.lazy(() =>
-  import("./../../components/dashboard/publish/Publish")
-);
-const ItConsulting = React.lazy(() =>
-  import("./../../components/dashboard/consulting/ItConsulting")
-);
+import Mdash  from "./../../components/dashboard/mdash/Mdash";
+import HeroShot from "./../../components/dashboard/heroshot/HeroShot";
+import SoftwareConsultancy  from "./../../components/dashboard/softwareConsultancy/SoftwareConsultancy";
+import IntroApp from "./../../components/dashboard/intro/Intro";
+import Striper from "./../../components/dashboard/striper/Striper";
+import Publish from "./../../components/dashboard/publish/Publish";
+import ItConsulting from "./../../components/dashboard/consulting/ItConsulting";
 
 const useStyles = makeStyles((theme) => ({
   containerWrapper: {
@@ -66,20 +53,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const HomeContainer = () => {
+export const Home = (props) => {
   const classes = useStyles();
+  
+  
   return (
-    <Suspense fallback='<p>loading ...</p>'>
       <SectionContext.Provider value={{classes}}>
         <Mdash />
         <HeroShot />
         <Striper />
         <IntroApp />
-        <ItConsulting />
+        <ItConsulting  />
         <Publish />
         <SoftwareConsultancy />
         <Form />
       </SectionContext.Provider>
-    </Suspense>
   );
 };
+
+export const HomeContainer = withRouter(Home);

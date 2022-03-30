@@ -1,17 +1,35 @@
-import { useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
+import React from "react";
+import BackToTop from "react-back-to-top-button";
+import { makeStyles } from '@material-ui/core/styles';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
-function ScrollToTop({ history }) {
-  useEffect(() => {
-    const unlisten = history.listen(() => {
-      window.scrollTo(0, 0);
-    });
-    return () => {
-      unlisten();
-    }
-  }, []);
+const useStyles = makeStyles(() => ({
+      iconStyle: {
+        fontSize: '32px',
+      }
+    })
+  );
 
-  return (null);
-}
+  const style = {
+    backgroundColor : 'rgba(0,0,0,0.8)',
+    borderRadius : '50%',
+    width : '50px',
+    height : '50px',
+    zIndex: '9999',
+    color: '#ffffff'
+  }
+      
 
-export default withRouter(ScrollToTop);
+const ScrollToTop = () => {
+
+  const classes = useStyles();
+
+  return (
+    <BackToTop showOnScrollUp style={style} showAt={100} speed={1500} easing='easeInOutQuint'>
+      <ArrowUpwardIcon className={classes.iconStyle} />
+    </BackToTop>
+  )
+};
+
+
+export default ScrollToTop;
